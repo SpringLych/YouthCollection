@@ -1,0 +1,33 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交大有思·精选·后台</title>
+</head>
+
+<body>
+    <div id="app">
+        <form action="/collection/add_article/" method="POST" enctype="multipart/form-data">
+            {%csrf_token%} 网址（请不要输入http://)：
+            <input type="text" name="address" v-model.lazy="addr" />
+            <a :href="url" target="_blank">点击检测网址是否能正常访问</a>
+            封面图片：
+
+            <input type="file" name="image" accept="image/*" @change="getimg" />
+            <img style="max-width:300px;max-height:300px" :src="src" /> 栏目：
+            <select name="category">
+                {% for cate in category %}
+                <option value="{{cate.name}}">{{cate.name}}</option>
+                {%endfor%}
+            </select>
+            <input type="submit" value="提交" />
+        </form>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
+<script src="{%static 'js/admin.js' %}"></script>
+
+</html>

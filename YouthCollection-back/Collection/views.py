@@ -1,0 +1,67 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.shortcuts import render,HttpResponse,redirect
+from models import Article,Category
+from datetime import datetime
+from django.http import JsonResponse
+from django.core import serializers
+import os
+
+# Create your views here.
+
+def index(request):
+    category=Category.objects.all().order_by('weight')
+    return render(request,'index.html',{'category':category})
+
+
+def article(request,category):
+    # title 美人志etc
+    title=Category.objects.get(identify=category).name
+    articles=Article.objects.filter(category=title).values('address','img_name','timestamp').order_by('-timestamp')
+    # articles = serializers.serialize("json", articles)
+    
+    articles=list(articles)    
+    # return render(request,'article.html',{'title':title,'articles':articles})
+    res = {"title":title, "articles":articles}
+    return JsonResponse(res, safe=False)
+
+def admin(request):
+    category=Category.objects.all().order_by('weight')
+    return render(request,'admin.html',{'category':category})
+
+
+def add_article(request):
+    if request.method == "POST":
+        try:
+            img = request.FILES.get('image')
+            baseDir = os.path.dirname(os.path.abspath(__file__))
+            baseDir = os.path.dirname(baseDir)
+            imgdir = os.path.join(baseDir,'static','images')
+            num=Article.objects.count()+1
+            filename="youth"+ str(num)+img.name
+            filepath = os.path.join(imgdir,filename)
+            while(os.path.exists(filepath)):
+                num=num+1
+                filename="youth"+ str(num)+img.name
+                filepath = os.path.join(imgdir,filename)
+            fileobj = open(filepath,'wb')
+            for chrunk in img.chunks():
+                fileobj.write(chrunk)
+            fileobj.close()
+            category=request.POST.get('category')
+            address=request.POST.get('address')
+            img_name=filename
+            timestamp=datetime.now()
+            article=Article(category=category,address=address,img_name=img_name,timestamp=timestamp)
+            article.save()
+            return render(request,'success.html')
+        except:
+            return render(request,'error.html',{'info':'系统异常,添加失败'})
+    else:
+        return render(request,'error.html',{'info':'系统异常,添加失败'})
+
+# 测试ajax成功
+def ajaxtest(request):
+    a = "来自ajaxtest"
+    return JsonResponse(a, safe=False)

@@ -1,0 +1,43 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交大有思·精选·{{title}}</title>
+    <link rel="stylesheet" href="{%static 'css/article.css' %}">
+</head>
+
+<body>
+    <!-- 这一部分是为了方便写前端，写完即可删除，真正展示的是下面的div -->
+    <h1>美人志</h1>
+    <div>
+        <div class="article">
+            <a href="https://mp.weixin.qq.com/s/jXEZaw9WYZ__kAxcohlmsw">
+                <img src="http://mmbiz.qpic.cn/mmbiz_jpg/H23VLtfialwzIibx4fMXonEUIJibxoDAHsCYlFaFxrqmmFlLxbiaBZVGQys10Fm3pyDZsefiaE4Lyr2G6htAbvX8kmA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1"
+                    alt="封面图" class="img">
+            </a>
+        </div>
+        <div class="article">
+            <a href="https://mp.weixin.qq.com/s/omCw_4v5c-TqJQwopV812Q">
+                <img src="https://mmbiz.qpic.cn/mmbiz_jpg/H23VLtfialww1GgV8n89Hp4ibwhD9ApltZZzpTTaOhAciaYtOYegrdtrAHSR1evtkmnl48ia0a32micbaGof8k4J5iaQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1"
+                    alt="封面图" class="img">
+            </a>
+        </div>
+    </div>
+    <!-- 这一部分是为了方便写前端，写完即可删除，真正展示的是下面的div -->
+
+    <h1>{{title}}</h1>
+    <div>{% for term in articles %}
+        <div class="article">
+            <a href="http://{{term.address}}">
+                <img src="/static/images/{{term.img_name}}" alt="{{term.img_name}}" class="img">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>
