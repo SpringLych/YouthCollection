@@ -18,7 +18,7 @@ def index(request):
 def article(request,category):
     # title 美人志etc
     title=Category.objects.get(identify=category).name
-    articles=Article.objects.filter(category=title).values('address','img_name','timestamp').order_by('-timestamp')
+    articles=Article.objects.filter(category=title).values('address','img_name','timestamp','title','introduction').order_by('-timestamp')
     # articles = serializers.serialize("json", articles)
     
     articles=list(articles)    
@@ -51,9 +51,11 @@ def add_article(request):
             fileobj.close()
             category=request.POST.get('category')
             address=request.POST.get('address')
+            title=request.POST.get('title')
+            introduction=request.POST.get('introduction')
             img_name=filename
             timestamp=datetime.now()
-            article=Article(category=category,address=address,img_name=img_name,timestamp=timestamp)
+            article=Article(category=category,address=address,img_name=img_name,timestamp=timestamp,title=title,introduction=introduction)
             article.save()
             return render(request,'success.html')
         except:

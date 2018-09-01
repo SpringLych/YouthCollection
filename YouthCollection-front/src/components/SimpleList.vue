@@ -20,10 +20,10 @@
 
                 <mu-list-item-content>
                     <!-- 标题 -->
-                    <mu-list-item-title>{{img_name}}</mu-list-item-title>
+                    <mu-list-item-title>{{title}}</mu-list-item-title>
                     <mu-list-item-sub-title>
                         <!-- 简介 -->
-                        <span style="color: rgba(0, 0, 0, .87)">{{address}}</span> 
+                        <span style="color: rgba(0, 0, 0, .87)">{{introduction}}</span> 
                     </mu-list-item-sub-title>
                 </mu-list-item-content>
             </mu-list-item>
@@ -49,7 +49,7 @@ export default {
       window.location.href = "http://" + this.address;
     }
   },
-  props: ["img_name", "address"]
+  props: ["img_name", "address", "title", "introduction"]
 };
 </script>
 
@@ -66,7 +66,7 @@ export default {
 
 .mu-card {
   width: 90%;
-  max-width: 180px;
+  max-width: 100px;
   /* margin: 0 auto; */
   max-height: 100px;
   /* position: absolute;

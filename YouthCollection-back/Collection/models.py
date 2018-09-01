@@ -9,6 +9,8 @@ class Article(models.Model):
     address=models.URLField()
     img_name=models.CharField(max_length=150)
     timestamp=models.DateTimeField()
+    title=models.CharField(max_length=100)
+    introduction=models.CharField(max_length=200)
 
 
 class Category(models.Model):

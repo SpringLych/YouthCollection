@@ -11,18 +11,25 @@
 <body>
     <div id="app">
         <form action="/collection/add_article/" method="POST" enctype="multipart/form-data">
-            {%csrf_token%} 网址（请不要输入http://)：
-            <input type="text" name="address" v-model.lazy="addr" />
+            {%csrf_token%} 
+            <label for="addr">网址（请不要输入http://)：</label> 
+            <input type="text" name="address" v-model.lazy="addr" id="addr" >
             <a :href="url" target="_blank">点击检测网址是否能正常访问</a>
-            封面图片：
+            <label for="pic"> 封面图片：</label>
+           
 
-            <input type="file" name="image" accept="image/*" @change="getimg" />
-            <img style="max-width:300px;max-height:300px" :src="src" /> 栏目：
-            <select name="category">
+            <input type="file" name="image" accept="image/*" @change="getimg" id="pic" >
+            <img style="max-width:300px;max-height:300px" :src="src" /> 
+            <label for="cate">栏目：</label> 
+            <select name="category" id="cate">
                 {% for cate in category %}
                 <option value="{{cate.name}}">{{cate.name}}</option>
                 {%endfor%}
             </select>
+            <label for="title">标题</label>
+            <input type="text" id="title" name="title">
+            <label for="intro">简介</label>
+            <input type="text" id="intro" name="introduction">
             <input type="submit" value="提交" />
         </form>
     </div>

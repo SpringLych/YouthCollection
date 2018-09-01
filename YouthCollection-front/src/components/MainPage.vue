@@ -11,19 +11,19 @@
       <div class="demo-text" v-if="active2 === 0">
         <!-- 美人志 -->
         
-        <simplelist v-for="item of meiArticles" :key="item.id" :img_name="item.img_name" :address="item.address">
+        <simplelist v-for="item of meiArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
         </simplelist>
       </div>
 
       <div class="demo-text" v-if="active2 === 1">
         <!-- 男神志 -->
-        <simplelist v-for="item of nanArticles" :key="item.id" :img_name="item.img_name" :address="item.address">
+        <simplelist v-for="item of nanArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
         </simplelist>
       </div>
 
       <div class="demo-text" v-if="active2 === 2">
         <!-- 美食志、精选？ -->
-        <simplelist v-for="item of jingArticles" :key="item.id" :img_name="item.img_name" :address="item.address">
+        <simplelist v-for="item of jingArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
         </simplelist>
       </div>
 
@@ -92,7 +92,7 @@ export default {
         this.nanshenCou = 0;
         this.jingCou = 0;
 
-        console.log(this.meiTitle);
+        // console.log(this.meiTitle);
       });
     },
     getNanshen() {
