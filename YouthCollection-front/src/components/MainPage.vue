@@ -73,11 +73,11 @@ export default {
       if (this.meirenCou > 0) {
         return;
       }
-      console.log("获取美人志...");
+      // console.log("获取美人志...");
 
       this.$http({
         method: "GET",
-
+        
         url: "http://127.0.0.1:8000/collection/article/meirenzhi",
         headers: {
           // "Access-Control-Allow-Origin": "*",
@@ -99,7 +99,7 @@ export default {
       if (this.nanCou > 0) {
         return;
       }
-      console.log("获取男神志...");
+      // console.log("获取男神志...");
       this.$http({
         method: "GET",
         url: "http://127.0.0.1:8000/collection/article/nanshenzhi",
@@ -109,7 +109,7 @@ export default {
           'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
         }
       }).then(response => {
-        console.log(this.nanTitle);
+        // console.log(this.nanTitle);
 
         this.nanTitle = response.data.title;
         this.nanArticles = response.data.articles;
@@ -123,7 +123,7 @@ export default {
       if (this.jingCou > 0) {
         return;
       }
-      console.log("获取美食志...");
+      // console.log("获取美食志...");
       this.$http({
         method: "GET",
         url: "http://127.0.0.1:8000/collection/article/meishizhi",
@@ -133,7 +133,7 @@ export default {
           'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
         }
       }).then(response => {
-        console.log(this.jingTitle);
+        // console.log(this.jingTitle);
 
         this.jingTitle = response.data.title;
         this.jingArticles = response.data.articles;
