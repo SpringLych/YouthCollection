@@ -3,30 +3,36 @@
 
     <carousel></carousel>
     <!-- <mu-container> -->
-      <mu-tabs :value.sync="active2" inverse color="blue" indicator-color="blue" full-width>
-        <mu-tab @click="getMeiren()">美人志</mu-tab>
-        <mu-tab @click="getNanshen()">男神志</mu-tab>
-        <mu-tab @click="getMeishi()">美食志</mu-tab>
-      </mu-tabs>
-      <div class="demo-text" v-if="active2 === 0">
-        <!-- 美人志 -->
-        
-        <simplelist v-for="item of meiArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-        </simplelist>
-      </div>
+    <mu-tabs :value.sync="active2" inverse color="blue" indicator-color="blue" full-width>
+      <mu-tab @click="getMeiren()">美人志</mu-tab>
+      <mu-tab @click="getNanshen()">男神志</mu-tab>
+      <mu-tab @click="getMeishi()">美食志</mu-tab>
+      <mu-tab>
+        <menud></menud>
+      </mu-tab>
+    </mu-tabs>
+    <div class="demo-text" v-if="active2 === 0">
+      <!-- 美人志 -->
 
-      <div class="demo-text" v-if="active2 === 1">
-        <!-- 男神志 -->
-        <simplelist v-for="item of nanArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-        </simplelist>
-      </div>
+      <simplelist v-for="item of meiArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+      </simplelist>
+    </div>
 
-      <div class="demo-text" v-if="active2 === 2">
-        <!-- 美食志、精选？ -->
-        <simplelist v-for="item of jingArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-        </simplelist>
-      </div>
+    <div class="demo-text" v-if="active2 === 1">
+      <!-- 男神志 -->
+      <simplelist v-for="item of nanArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+      </simplelist>
+    </div>
 
+    <div class="demo-text" v-if="active2 === 2">
+      <!-- 美食志、精选？ -->
+      <simplelist v-for="item of jingArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+      </simplelist>
+    </div>
+
+    <div class="demo-text" v-if="active2 === 3">
+      <p>测试</p>
+    </div>
     <!-- </mu-container> -->
 
   </div>
@@ -36,6 +42,7 @@
 // import list from "./List";
 import simplelist from "./SimpleList";
 import carousel from "./Carousel";
+import menud from "./MenuD";
 
 export default {
   name: "MainPage",
@@ -43,6 +50,7 @@ export default {
     return {
       active2: 0,
       data: "",
+
       meiTitle: "",
       meiArticles: "",
       meirenCou: 0,
@@ -67,6 +75,7 @@ export default {
     // list,
     simplelist,
     carousel,
+    menud
   },
   methods: {
     getMeiren() {
@@ -77,12 +86,12 @@ export default {
 
       this.$http({
         method: "GET",
-        
+
         url: "http://127.0.0.1:8000/collection/article/meirenzhi",
         headers: {
           // "Access-Control-Allow-Origin": "*",
           // "Access-Control-Allow-Headers": "origin, content-type, accept",
-          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
         }
       }).then(response => {
         this.meiTitle = response.data.title;
@@ -106,7 +115,7 @@ export default {
         headers: {
           // "Access-Control-Allow-Origin": "*",
           // "Access-Control-Allow-Headers": "origin, content-type, accept",
-          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
         }
       }).then(response => {
         // console.log(this.nanTitle);
@@ -130,7 +139,7 @@ export default {
         headers: {
           // "Access-Control-Allow-Origin": "*",
           // "Access-Control-Allow-Headers": "origin, content-type, accept",
-          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
         }
       }).then(response => {
         // console.log(this.jingTitle);
@@ -143,13 +152,12 @@ export default {
         this.jingCou = 1;
       });
     }
-  },
-  
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang='less'>
 .hello {
   height: 100%;
 }

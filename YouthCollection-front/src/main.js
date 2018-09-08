@@ -15,15 +15,19 @@ import VueAxios from 'vue-axios';
 import 'muse-ui/lib/styles/base.less';
 import {
   // Avatar,
+  AppBar,
   Carousel,
   Tabs,
   Button,
   Card,
   Dialog,
   Divider,
+  ExpansionPanel,
   Icon,
   List,
-  
+  LoadMore,
+  Menu,
+  Paper,
 } from 'muse-ui';
 import 'muse-ui/lib/styles/theme.less';
 
@@ -39,14 +43,19 @@ Vue.config.productionTip = false
 // Vue.use(Message)
 // Vue.use(MuseUI)
 Vue.use(VueAxios, axios);
+Vue.use(AppBar);
 Vue.use(Carousel);
 Vue.use(Tabs);
 Vue.use(Button)
 Vue.use(Card);
 Vue.use(Dialog);
 Vue.use(Divider);
+Vue.use(ExpansionPanel);
 Vue.use(Icon);
 Vue.use(List);
+Vue.use(LoadMore);
+Vue.use(Menu);
+Vue.use(Paper);
 
 
 
