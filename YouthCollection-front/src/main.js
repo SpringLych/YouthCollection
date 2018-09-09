@@ -62,6 +62,11 @@ Vue.use(Paper);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  components: { App },
-  template: '<App/>'
+  components: {
+    App
+  },
+  template: '<App/>',
+  data: {
+    eventHub: new Vue()
+  }
 })

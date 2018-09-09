@@ -4,9 +4,9 @@
     <carousel></carousel>
     <!-- <mu-container> -->
     <mu-tabs :value.sync="active2" inverse color="blue" indicator-color="blue" full-width>
-      <mu-tab @click="getMeiren()">美人志</mu-tab>
-      <mu-tab @click="getNanshen()">男神志</mu-tab>
-      <mu-tab @click="getMeishi()">美食志</mu-tab>
+      <mu-tab @click="getArticles('meirenzhi')">美人志</mu-tab>
+      <mu-tab @click="getArticles('nanshenzhi')">男神志</mu-tab>
+      <mu-tab @click="getArticles('meishizhi')">美食志</mu-tab>
       <mu-tab>
         <menud></menud>
       </mu-tab>
@@ -14,24 +14,26 @@
     <div class="demo-text" v-if="active2 === 0">
       <!-- 美人志 -->
 
-      <simplelist v-for="item of meiArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+      <simplelist v-for="item of meirenzhiArtilces" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
       </simplelist>
     </div>
 
     <div class="demo-text" v-if="active2 === 1">
       <!-- 男神志 -->
-      <simplelist v-for="item of nanArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+      <simplelist v-for="item of nanshenzhiArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
       </simplelist>
     </div>
 
     <div class="demo-text" v-if="active2 === 2">
       <!-- 美食志、精选？ -->
-      <simplelist v-for="item of jingArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+      <simplelist v-for="item of meishizhiArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
       </simplelist>
     </div>
 
     <div class="demo-text" v-if="active2 === 3">
-      <p>测试</p>
+      <p>{{otherArticles}}</p>
+      <simplelist v-for="item of otherArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+      </simplelist>
     </div>
     <!-- </mu-container> -->
 
@@ -50,6 +52,14 @@ export default {
     return {
       active2: 0,
       data: "",
+      info: "",
+
+      categoryUrl: "",
+      articles: "",
+      meirenzhiArtilces: "",
+      nanshenzhiArticles: "",
+      meishizhiArticles: "",
+      otherArticles:"",
 
       meiTitle: "",
       meiArticles: "",
@@ -61,14 +71,16 @@ export default {
 
       jingTitle: "",
       jingArticles: "",
-      jingCou: 0
+      jingCou: 0,
+
+      lurenData: ""
     };
   },
   mounted: function() {
     this.$nextTick(function() {
       // Code that will run only after the
       // entire view has been rendered
-      this.getMeiren();
+      this.getArticles("meirenzhi");
     });
   },
   components: {
@@ -77,7 +89,41 @@ export default {
     carousel,
     menud
   },
+  created() {
+    this.$root.eventHub.$on("fromMenuD", data => {
+      this.otherArticles = data;
+    });
+  },
   methods: {
+    getArticles(category) {
+      this.articles = "";
+      this.categoryUrl = "http://127.0.0.1:8000/collection/article/" + category;
+      this.$http({
+        method: "GET",
+        url: this.categoryUrl,
+        headers: {
+          // "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Headers": "origin, content-type, accept",
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+        }
+      }).then(response => {
+        // this.articles = response.data.articles;
+        switch (category) {
+          case "meirenzhi":
+            this.meirenzhiArtilces = response.data.articles;
+            break;
+          case "nanshenzhi":
+            this.nanshenzhiArticles = response.data.articles;
+            break;
+          case "meishizhi":
+            this.meishizhiArticles = response.data.articles;
+            break;
+          default:
+            break;
+        }
+      });
+    },
+
     getMeiren() {
       if (this.meirenCou > 0) {
         return;
