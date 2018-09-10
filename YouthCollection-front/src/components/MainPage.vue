@@ -61,19 +61,6 @@ export default {
       meishizhiArticles: "",
       otherArticles:"",
 
-      meiTitle: "",
-      meiArticles: "",
-      meirenCou: 0,
-
-      nanTitle: "",
-      nanArticles: "",
-      nanCou: 0,
-
-      jingTitle: "",
-      jingArticles: "",
-      jingCou: 0,
-
-      lurenData: ""
     };
   },
   mounted: function() {
@@ -206,11 +193,5 @@ export default {
 <style scoped lang='less'>
 .hello {
   height: 100%;
-}
-.mu-item {
-  padding-top: 0px;
-  padding-right: 6px;
-  padding-bottom: 0px;
-  padding-left: 6px;
 }
 </style>

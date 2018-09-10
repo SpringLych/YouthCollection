@@ -23,7 +23,7 @@
                     <mu-list-item-title>{{title}}</mu-list-item-title>
                     <mu-list-item-sub-title>
                         <!-- 简介 -->
-                        <span style="color: rgba(0, 0, 0, .87)">{{introduction}}</span> 
+                        <span style="color: rgba(0, 0, 0, .87)">{{introduction}}</span>
                     </mu-list-item-sub-title>
                 </mu-list-item-content>
             </mu-list-item>
@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     toUrl() {
-    //   console.log("点击列表 URL：" + this.address);
+      //   console.log("点击列表 URL：" + this.address);
       window.location.href = "http://" + this.address;
     }
   },
@@ -54,14 +54,12 @@ export default {
 </script>
 
 <style scoped>
-.mu-item {
-  padding-top: 0px;
-    padding-right: 6px;
-    padding-bottom: 0px;
-    padding-left: 6px;
-}
+
 .hid {
   display: none;
+}
+.my-mu-card-media{
+    width: 100px;
 }
 
 .mu-card {
@@ -78,5 +76,4 @@ export default {
   /* max-width: 50%; */
   /* margin: 0 auto; */
 }
-
 </style>

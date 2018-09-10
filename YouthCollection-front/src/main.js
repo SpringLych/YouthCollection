@@ -6,10 +6,6 @@ import App from './App';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 
-// import MuseUI from 'muse-ui';
-// import 'muse-ui/dist/muse-ui.css';
-// import 'muse-ui-message/dist/muse-ui-message.css';
-
 
 // 按需引入muse-ui
 import 'muse-ui/lib/styles/base.less';
