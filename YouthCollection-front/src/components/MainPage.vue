@@ -3,39 +3,59 @@
 
     <carousel></carousel>
     <!-- <mu-container> -->
-    <mu-tabs :value.sync="active2" inverse color="blue" indicator-color="blue" full-width>
-      <mu-tab @click="getArticles('meirenzhi')">美人志</mu-tab>
-      <mu-tab @click="getArticles('nanshenzhi')">男神志</mu-tab>
-      <mu-tab @click="getArticles('meishizhi')">美食志</mu-tab>
-      <mu-tab>
-        <menud></menud>
-      </mu-tab>
-    </mu-tabs>
-    <div class="demo-text" v-if="active2 === 0">
-      <!-- 美人志 -->
+    <div style="height:100%;">
+      <tab active-color='#3295D8' v-model="index">
+        <!-- <tab-item v-for="(item,index) in tabItem" :key="index" :selected="itemselect===item.title" @click="itemselect=item.title" @on-item-click="handler(item.title)">{{item.title}}</tab-item> -->
+        <tab-item selected @on-item-click="getArticles(index0.data)">{{index0.title}}</tab-item>
+        <tab-item @on-item-click="getArticles(index1.data)">{{index1.title}}</tab-item>
+        <tab-item>{{index2.title}}</tab-item>
+        <tab-item>{{index3.title}}</tab-item>
+        <tab-item>{{index4.title}}</tab-item>
+        <tab-item @on-item-click="getArticles(index5.data)">{{index5.title}}</tab-item>
+        <tab-item>{{index6.title}}</tab-item>
+      </tab>
 
-      <simplelist v-for="item of meirenzhiArtilces" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-      </simplelist>
+      <view-box ref="viewBox" v-model="index">
+        <div v-if="index===0">
+          <simplelist v-for="item of index0.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+          </simplelist>
+        </div>
+        <div v-if="index===1">
+          <p>{{index1.title}}</p>
+          <simplelist v-for="item of index1.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+          </simplelist>
+        </div>
+        <div v-if="index===2">
+          <p>{{index2.title}}</p>
+          <simplelist v-for="item of index2.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+          </simplelist>
+        </div>
+        <div v-if="index===3">
+          <p>{{index3.title}}</p>
+          <simplelist v-for="item of index3.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+          </simplelist>
+        </div>
+        <div v-if="index===4">
+          <p>{{index4.title}}</p>
+          <simplelist v-for="item of index4.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+          </simplelist>
+        </div>
+        <div v-if="index===5">
+          <p>{{index5.title}}</p>
+          <simplelist v-for="item of index5.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+          </simplelist>
+        </div>
+        <div v-if="index===6">
+          <p>{{index6.title}}</p>
+          <simplelist v-for="item of index6.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+          </simplelist>
+        </div>
+      </view-box>
+      <!-- <swiper v-model="index" :show-dots="false">
+        <swiper-item>
+        </swiper-item>
+      </swiper> -->
     </div>
-
-    <div class="demo-text" v-if="active2 === 1">
-      <!-- 男神志 -->
-      <simplelist v-for="item of nanshenzhiArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-      </simplelist>
-    </div>
-
-    <div class="demo-text" v-if="active2 === 2">
-      <!-- 美食志、精选？ -->
-      <simplelist v-for="item of meishizhiArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-      </simplelist>
-    </div>
-
-    <div class="demo-text" v-if="active2 === 3">
-      <p>{{otherArticles}}</p>
-      <simplelist v-for="item of otherArticles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-      </simplelist>
-    </div>
-    <!-- </mu-container> -->
 
   </div>
 </template>
@@ -46,21 +66,72 @@ import simplelist from "./SimpleList";
 import carousel from "./Carousel";
 import menud from "./MenuD";
 
+import { Tab, TabItem, Swiper, SwiperItem, ViewBox } from "vux";
+
 export default {
   name: "MainPage",
+  components: {
+    // list,
+    simplelist,
+    carousel,
+    menud,
+    Tab,
+    TabItem,
+    Swiper,
+    SwiperItem,
+    ViewBox
+  },
   data() {
     return {
       active2: 0,
       data: "",
       info: "",
+      // 栏目名称
+      "index0": {
+        title: "美人志",
+        data: "meirenzhi",
+        articles:'',
+      },
+      "index1": {
+        title: "男神志",
+        data: "nanshenzhi",
+        articles:'',
+      },
+      "index2": {
+        title: "深度好文",
+        data: "shenduhaowen",
+        articles:'',
+      },
+      "index3": {
+        title: "线上活动",
+        data: "xianshanghuodong",
+        articles:'',
+      },
+      "index4": {
+        title: "牛人志",
+        data: "niurenzhi",
+        articles:'',
+      },
+      "index5": {
+        title: "美食志",
+        data: "meishizhi",
+        articles:'',
+      },
+      "index6": {
+        title: "路人志",
+        data: "lurenzhi",
+        articles:'',
+      },
+
+      index: 0,
+      itemselect: "美人志",
 
       categoryUrl: "",
-      articles: "",
-      meirenzhiArtilces: "",
-      nanshenzhiArticles: "",
-      meishizhiArticles: "",
-      otherArticles:"",
-
+      // articles: "",
+      // meirenzhiArticles: "",
+      // nanshenzhiArticles: "",
+      // meishizhiArticles: "",
+      otherArticles: ""
     };
   },
   mounted: function() {
@@ -70,12 +141,7 @@ export default {
       this.getArticles("meirenzhi");
     });
   },
-  components: {
-    // list,
-    simplelist,
-    carousel,
-    menud
-  },
+
   created() {
     this.$root.eventHub.$on("fromMenuD", data => {
       this.otherArticles = data;
@@ -96,93 +162,24 @@ export default {
       }).then(response => {
         // this.articles = response.data.articles;
         switch (category) {
-          case "meirenzhi":
-            this.meirenzhiArtilces = response.data.articles;
+          case this.index0.data:
+            // this.articleCategory.meirenzhi = response.data.articles;
+            // this.meirenzhiArticles = response.data.articles;
+            this.index0.articles = response.data.articles;
             break;
-          case "nanshenzhi":
+          case this.index1.data:
+            // this.articleCategory.nanshenzhi = response.data.articles;
             this.nanshenzhiArticles = response.data.articles;
+            this.index1.articles = response.data.articles;
             break;
-          case "meishizhi":
-            this.meishizhiArticles = response.data.articles;
+          case this.index5.data:
+            // this.articleCategory.meishizhi = response.data.articles;
+            // this.meishizhiArticles = response.data.articles;
+            this.index5.articles = response.data.articles;
             break;
           default:
             break;
         }
-      });
-    },
-
-    getMeiren() {
-      if (this.meirenCou > 0) {
-        return;
-      }
-      // console.log("获取美人志...");
-
-      this.$http({
-        method: "GET",
-
-        url: "http://127.0.0.1:8000/collection/article/meirenzhi",
-        headers: {
-          // "Access-Control-Allow-Origin": "*",
-          // "Access-Control-Allow-Headers": "origin, content-type, accept",
-          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
-        }
-      }).then(response => {
-        this.meiTitle = response.data.title;
-        this.meiArticles = response.data.articles;
-
-        this.meirenCou = 1;
-        this.nanshenCou = 0;
-        this.jingCou = 0;
-
-        // console.log(this.meiTitle);
-      });
-    },
-    getNanshen() {
-      if (this.nanCou > 0) {
-        return;
-      }
-      // console.log("获取男神志...");
-      this.$http({
-        method: "GET",
-        url: "http://127.0.0.1:8000/collection/article/nanshenzhi",
-        headers: {
-          // "Access-Control-Allow-Origin": "*",
-          // "Access-Control-Allow-Headers": "origin, content-type, accept",
-          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
-        }
-      }).then(response => {
-        // console.log(this.nanTitle);
-
-        this.nanTitle = response.data.title;
-        this.nanArticles = response.data.articles;
-
-        this.meirenCou = 0;
-        this.nanCou = 1;
-        this.jingCou = 0;
-      });
-    },
-    getMeishi() {
-      if (this.jingCou > 0) {
-        return;
-      }
-      // console.log("获取美食志...");
-      this.$http({
-        method: "GET",
-        url: "http://127.0.0.1:8000/collection/article/meishizhi",
-        headers: {
-          // "Access-Control-Allow-Origin": "*",
-          // "Access-Control-Allow-Headers": "origin, content-type, accept",
-          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
-        }
-      }).then(response => {
-        // console.log(this.jingTitle);
-
-        this.jingTitle = response.data.title;
-        this.jingArticles = response.data.articles;
-
-        this.meirenCou = 0;
-        this.nanCou = 0;
-        this.jingCou = 1;
       });
     }
   }
@@ -193,5 +190,11 @@ export default {
 <style scoped lang='less'>
 .hello {
   height: 100%;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 </style>
