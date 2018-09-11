@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Page from "./components/MainPage";
+import Page from "./components/Home";
 
 export default {
   name: "App",

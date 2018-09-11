@@ -1,8 +1,5 @@
 <template>
   <div class="hello">
-
-    <carousel></carousel>
-    <!-- <mu-container> -->
     <div style="height:100%;">
       <tab active-color='#3295D8' v-model="index">
         <!-- <tab-item v-for="(item,index) in tabItem" :key="index" :selected="itemselect===item.title" @click="itemselect=item.title" @on-item-click="handler(item.title)">{{item.title}}</tab-item> -->
@@ -42,8 +39,9 @@
         </div>
         <div v-if="index===5">
           <p>{{index5.title}}</p>
-          <simplelist v-for="item of index5.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-          </simplelist>
+          <!-- <simplelist v-for="item of index5.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+          </simplelist> -->
+          <panel  :list="list"></panel>
         </div>
         <div v-if="index===6">
           <p>{{index6.title}}</p>
@@ -66,7 +64,7 @@ import simplelist from "./SimpleList";
 import carousel from "./Carousel";
 import menud from "./MenuD";
 
-import { Tab, TabItem, Swiper, SwiperItem, ViewBox } from "vux";
+import { Tab, TabItem, Swiper, SwiperItem, ViewBox, Panel } from "vux";
 
 export default {
   name: "MainPage",
@@ -79,7 +77,8 @@ export default {
     TabItem,
     Swiper,
     SwiperItem,
-    ViewBox
+    ViewBox,
+    Panel
   },
   data() {
     return {
@@ -126,6 +125,28 @@ export default {
       index: 0,
       itemselect: "美人志",
 
+    type:'1',
+      list: [{
+        src: '../../static/images/640.webp',
+        fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+        title: '我走过千山万水，只想再见你一面，侄子花开的世界',
+        // desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+        url: '/component/cell'
+      }, {
+        src: '../../static/images/youth4640.webp',
+        title: '标题二',
+        desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+        url: {
+          path: '/component/radio',
+          replace: false
+        },
+        meta: {
+          source: '来源信息',
+          date: '时间',
+          other: '其他信息'
+        }
+      }],
+
       categoryUrl: "",
       // articles: "",
       // meirenzhiArticles: "",
@@ -169,7 +190,7 @@ export default {
             break;
           case this.index1.data:
             // this.articleCategory.nanshenzhi = response.data.articles;
-            this.nanshenzhiArticles = response.data.articles;
+            // this.nanshenzhiArticles = response.data.articles;
             this.index1.articles = response.data.articles;
             break;
           case this.index5.data:
