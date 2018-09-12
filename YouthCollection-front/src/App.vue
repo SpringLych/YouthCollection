@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    
-      <!-- <img src="./assets/logo.png"> -->
-      <Page/>
+
+    <!-- <img src="./assets/logo.png"> -->
+    <Page/>
   </div>
 </template>
 
@@ -25,5 +25,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
+}
+a {
+  text-decoration: none;
 }
 </style>

@@ -26,20 +26,20 @@ def article(request, category):
     articles = list(articles)
     # return render(request,'article.html',{'title':title,'articles':articles})
     # 格式化得到的数据
-    fort = {
-        "src": '',
-        "title": '',
-        "desc": '',
-        "url": ''
-    }
+
     format_arc = []
     for item in articles:
-        fort["src"] = "/static/images/"+item["img_name"]
+        fort = {
+            "src": '',
+            "title": '',
+            "desc": '',
+            "url": ''
+        }
+        fort["src"] = "/static/images/" + item["img_name"]
         fort["title"] = item["title"]
         fort["desc"] = item["introduction"]
         fort["url"] = item["address"]
         format_arc.append(fort)
-    format_arc.reverse()
 
     res = {"title": title, "articles": format_arc}
     return JsonResponse(res, safe=False)
