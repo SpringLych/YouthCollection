@@ -13,7 +13,7 @@
                     <mu-card>
                         <!-- style="width: 90%; max-width: 200px; margin: 0 auto;" -->
                         <mu-card-media>
-                            <img :src="'/static/images/'+img_name">
+                            <img :src="img_name">
                         </mu-card-media>
                     </mu-card>
                 </mu-list-item-action>

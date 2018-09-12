@@ -14,45 +14,29 @@
 
       <view-box ref="viewBox" v-model="index">
         <div v-if="index===0">
-          <simplelist v-for="item of index0.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-          </simplelist>
+          <panel :list="list" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===1">
-          <p>{{index1.title}}</p>
-          <simplelist v-for="item of index1.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-          </simplelist>
+          <panel :list="index1.articles" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===2">
-          <p>{{index2.title}}</p>
-          <simplelist v-for="item of index2.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-          </simplelist>
+          <panel :list="index2.articles" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===3">
-          <p>{{index3.title}}</p>
-          <simplelist v-for="item of index3.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-          </simplelist>
+          <panel :list="index3.articles" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===4">
-          <p>{{index4.title}}</p>
-          <simplelist v-for="item of index4.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-          </simplelist>
+          <panel :list="index4.articles" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===5">
-          <p>{{index5.title}}</p>
-          <!-- <simplelist v-for="item of index5.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-          </simplelist> -->
-          <panel  :list="list"></panel>
+          <panel :list="list" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===6">
-          <p>{{index6.title}}</p>
-          <simplelist v-for="item of index6.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
-          </simplelist>
+          <!-- <simplelist v-for="item of index6.articles" :key="item.id" :img_name="item.img_name" :address="item.address" :title="item.title" :introduction="item.introduction">
+          </simplelist> -->
+          <panel :list="index6.articles" :type="type" :footer="footer"></panel>
         </div>
       </view-box>
-      <!-- <swiper v-model="index" :show-dots="false">
-        <swiper-item>
-        </swiper-item>
-      </swiper> -->
     </div>
 
   </div>
@@ -60,7 +44,7 @@
 
 <script>
 // import list from "./List";
-import simplelist from "./SimpleList";
+// import simplelist from "./SimpleList";
 import carousel from "./Carousel";
 import menud from "./MenuD";
 
@@ -70,88 +54,94 @@ export default {
   name: "MainPage",
   components: {
     // list,
-    simplelist,
-    carousel,
+    // simplelist,
+    // carousel,
     menud,
     Tab,
     TabItem,
     Swiper,
     SwiperItem,
     ViewBox,
-    Panel
+    Panel,
   },
   data() {
     return {
       active2: 0,
       data: "",
-      info: "",
+      type: '1', // pannel类型
       // 栏目名称
-      "index0": {
+      index2: {
         title: "美人志",
         data: "meirenzhi",
-        articles:'',
+        articles: ""
       },
-      "index1": {
+      index1: {
         title: "男神志",
         data: "nanshenzhi",
-        articles:'',
+        articles: ""
       },
-      "index2": {
-        title: "深度好文",
-        data: "shenduhaowen",
-        articles:'',
+      index0: {
+        title: "精选",
+        data: "jingxuan",
+        articles: ""
       },
-      "index3": {
+      index3: {
         title: "线上活动",
         data: "xianshanghuodong",
-        articles:'',
+        articles: ""
       },
-      "index4": {
+      index4: {
         title: "牛人志",
         data: "niurenzhi",
-        articles:'',
+        articles: ""
       },
-      "index5": {
+      index5: {
         title: "美食志",
         data: "meishizhi",
-        articles:'',
+        articles: ""
       },
-      "index6": {
+      index6: {
         title: "路人志",
         data: "lurenzhi",
-        articles:'',
+        articles: ""
       },
 
       index: 0,
-      itemselect: "美人志",
+      itemselect: "精选",
 
-    type:'1',
-      list: [{
-        src: '../../static/images/640.webp',
-        fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
-        title: '我走过千山万水，只想再见你一面，侄子花开的世界',
-        // desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
-        url: '/component/cell'
-      }, {
-        src: '../../static/images/youth4640.webp',
-        title: '标题二',
-        desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
-        url: {
-          path: '/component/radio',
-          replace: false
+      
+      list: [
+        {
+          src: "../../static/images/640.webp",
+          // fallbackSrc: "http://placeholder.qiniudn.com/60x60/3cc51f/ffffff",
+          title: "不会马赛回旋的甜妹不是好dancer",
+          desc: '在刚接手这篇美人志时，本思很担心写不出好的文章来介绍这期美人志的主人公，因为她实在是太特别了（内心是崩溃的）。',
+          url: "https://mp.weixin.qq.com/s/1FdaSQPsRcilNwrIUCrMmA"
         },
-        meta: {
-          source: '来源信息',
-          date: '时间',
-          other: '其他信息'
-        }
-      }],
+        {
+          src: "https://mmbiz.qpic.cn/mmbiz_jpg/H23VLtfialwxibdBmRSHBXdCChlYBEC2kkeAKWyUrePTxtVV1J7FFZSicHclhlfYgZq42VP6TKjsUDUGhxJDQlTqA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1",
+          title: "从时尚大片走出来的辅导员",
+          desc:
+            "看到这些标签，你会想到谁？外国语学院14级本科辅导员\n外国语学院学生会指导老师\n汉语国际教育系三年级研究生",
+          url: {
+            path: "https://mp.weixin.qq.com/s/wGMriH1AjwLKtknwkWXwYg",
+            replace: false
+          },
+          
+        },
+        {
+          src: "../../static/images/6402.webp",
+          // fallbackSrc: "http://placeholder.qiniudn.com/60x60/3cc51f/ffffff",
+          title: "山川河海与神明，都是你的",
+          desc: '『喔对了思思，你上次问我的用来形容自己的词……我想了想，只想到了爱笑』\n『然后还很好懂，不对，好懂算缺点，我做人太透明了就很没意思』',
+          url: "https://mp.weixin.qq.com/s/OxadhOKwKV2U5D87Sea_1Q"
+        },
+      ],
+      footer:{
+        title:'@交大有思·实验室'
+      },
 
       categoryUrl: "",
-      // articles: "",
-      // meirenzhiArticles: "",
-      // nanshenzhiArticles: "",
-      // meishizhiArticles: "",
       otherArticles: ""
     };
   },
@@ -159,7 +149,7 @@ export default {
     this.$nextTick(function() {
       // Code that will run only after the
       // entire view has been rendered
-      this.getArticles("meirenzhi");
+      this.getArticles(this.index0.data);
     });
   },
 
@@ -208,7 +198,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang='less'>
+<style lang='less'>
 .hello {
   height: 100%;
 }
@@ -217,5 +207,27 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+}
+// 图片外框
+.weui-media-box__hd{
+  width: 100px !important;
+  height: 100px !important;
+}
+// 图片
+.weui-media-box__thumb {
+  width: auto !important;
+  max-width: 100% !important;
+}
+.weui-media-box{
+  height: 120px;
+}
+// 列表文字
+.weui-media-box__bd{
+  text-align: left ;
+}
+// 列表标题
+.weui-media-box__title{
+  white-space: unset !important;
+  word-break: unset !important;
 }
 </style>
