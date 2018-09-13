@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, HttpResponse, redirect
-from models import Article, Category
+from models import Article, Category, HeadArticle
 from datetime import datetime
 from django.http import JsonResponse
 from django.core import serializers
@@ -89,3 +89,12 @@ def add_article(request):
 def ajaxtest(request):
     a = "来自ajaxtest"
     return JsonResponse(a, safe=False)
+
+
+def get_head_article(request):
+    head_art = HeadArticle.objects.filter().values(
+        'url', 'img', 'title').order_by('-addtime')
+    head_art=list(head_art)
+    # 只获取最新的三个
+    return_art = head_art[0:3]
+    return JsonResponse(return_art, safe=False)

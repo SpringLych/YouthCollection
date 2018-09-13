@@ -12,9 +12,8 @@
     <div id="app">
         <form action="/collection/add_article/" method="POST" enctype="multipart/form-data">
             {%csrf_token%} 
-            <label for="addr">网址（请不要输入http://)：</label> 
+            <label for="addr">网址</label> 
             <input type="text" name="address" v-model.lazy="addr" id="addr" >
-            <a :href="url" target="_blank">点击检测网址是否能正常访问</a>
             <label for="pic"> 封面图片：</label>
            
 

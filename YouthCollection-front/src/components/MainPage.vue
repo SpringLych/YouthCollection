@@ -9,6 +9,7 @@
         <tab-item @on-item-click="getArticles(index4.data)">{{index4.title}}</tab-item>
         <tab-item @on-item-click="getArticles(index5.data)">{{index5.title}}</tab-item>
         <tab-item @on-item-click="getArticles(index6.data)">{{index6.title}}</tab-item>
+        <tab-item @on-item-click="getArticles(index7.data)">{{index7.title}}</tab-item>
       </tab>
 
       <view-box ref="viewBox" v-model="index">
@@ -16,7 +17,7 @@
           <panel :list="index0.articles" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===1">
-          <panel :list="list" :type="type" :footer="footer"></panel>
+          <panel :list="index1.articles" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===2">
           <panel :list="index2.articles" :type="type" :footer="footer"></panel>
@@ -32,6 +33,9 @@
         </div>
         <div v-if="index===6">
           <panel :list="index6.articles" :type="type" :footer="footer"></panel>
+        </div>
+        <div v-if="index===7">
+          <panel :list="index7.articles" :type="type" :footer="footer"></panel>
         </div>
       </view-box>
     </div>
@@ -93,6 +97,11 @@ export default {
       index6: {
         title: "路人志",
         data: "lurenzhi",
+        articles: []
+      },
+      index7: {
+        title: "青年观察",
+        data: "qingnianguancha",
         articles: []
       },
 
@@ -174,6 +183,9 @@ export default {
           case this.index6.data:
             this.index6.articles = response.data.articles;
             break;
+          case this.index7.data:
+            this.index7.articles = response.data.articles;
+            break;
           default:
             break;
         }
@@ -227,5 +239,10 @@ body {
   // margin: auto !important;
   margin-top: 10px !important;
   margin-bottom: 10px !important;
+}
+.weui-media-box__desc{
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical !important;
+  /* autoprefixer: on */
 }
 </style>
