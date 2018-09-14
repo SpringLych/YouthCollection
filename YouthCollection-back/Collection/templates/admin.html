@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 {% load static %}
 <html lang="en">
 
@@ -12,26 +12,51 @@
 <body>
     <div id="app">
         <form action="/collection/add_article/" method="POST" enctype="multipart/form-data">
-            {%csrf_token%} 
+            {%csrf_token%}
+            <h2>按栏目推送</h2>
             <label for="title">推送标题</label>
             <input type="text" id="title" name="title"><br>
             <label for="intro">推送简介</label>
             <input type="text" id="intro" name="introduction"><br>
-            <label for="addr">网址</label> 
-            <input type="text" name="address" id="addr" ><br>
-            <label for="pic"> 封面图片：(复制的图片链接)</label>
+            <label for="addr">网址</label>
+            <input type="text" name="address" id="addr"><br>
+            <label for="pic"> 封面图片：(从推送复制图片链接)</label>
             <!-- <input type="file" name="image" accept="image/*" @change="getimg" id="pic" > -->
             <input type="text" id="title" name="image" v-model="imgurl"><br>
-            
-            <label for="cate">栏目：</label> 
-            <select name="category" id="cate">
-                {% for cate in category %}
-                <option value="{{cate.name}}">{{cate.name}}</option>
-                {%endfor%}
-            </select> <br>
+            <div >
+                <label for="cate" style="color:red;font-size:25px;">栏目：</label>
+                <select name="category" id="cate" style="font-size:25px;">
+                    {% for cate in category %}
+                    <option value="{{cate.name}}">{{cate.name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            <br>
             <input type="submit" value="提交" />
             <p>图片预览：</p>
+            {{imgurl}}
             <img style="max-width:300px;max-height:300px" :src="imgurl" /> <br>
+        </form>
+        <h2>顶部文章</h2>
+        <form action="/collection/add_head_article/" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <label for="title">头部推送标题</label>
+            <input type="text" id="title" name="headTitle"><br>
+            
+            <label for="addr">网址</label>
+            <input type="text" name="headAddress" id="addr"><br>
+            <label for="pic">
+                 封面图片(建议选择扁平图片,长宽比尽量与下方区域对应)：<br>
+                 (复制图片链接)
+            </label>
+            <!-- <input type="file" name="image" accept="image/*" @change="getimg" id="pic" > -->
+            <input type="text" id="title" name="headImage" v-model="headimgurl"><br>
+            <br>
+            <input type="submit" value="提交" />
+            <p>图片预览：</p>
+            <div style="width:400px;height:200px;margin: auto;background-color: aquamarine">
+                <img style="max-width:300px;max-height:300px" :src="headimgurl" /> <br>
+            </div>
         </form>
     </div>
 </body>
@@ -39,15 +64,20 @@
 <script src="{%static 'js/admin.js' %}"></script>
 <script>
     var app = new Vue({
-    el: '#app',
-    data: {
-        imgurl: '',
-    },
-});
+        el: '#app',
+        data: {
+            imgurl: '',
+            headimgurl:'',
+        },
+    });
 </script>
 <style>
-#app{
-    text-align: center
-}
+    #app {
+        text-align: center
+    }
+    label{
+        line-height: 200%
+    }
 </style>
+
 </html>

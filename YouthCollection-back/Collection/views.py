@@ -95,11 +95,30 @@ def get_head_article(request):
     return JsonResponse(return_art, safe=False)
 
 
+def add_head_article(request):
+    if request.method == "POST":
+        try:
+            # 跳转至地址
+            head_address = request.POST.get('headAddress')
+            head_title = request.POST.get('headTitle')
+            # 添加的图片链接
+            head_img_url = request.POST.get('headImage')
+            head_img_name = save_img(head_img_url)
+            head_img_name = '../static/images/'+head_img_name
+            head_article = HeadArticle(url=head_address,img=head_img_name,title=head_title)
+            head_article.save()
+            return render(request, 'success.html')
+        except:
+            return render(request, 'error.html', {'info': '系统异常,添加失败'})
+    else:
+        return render(request, 'error.html', {'info': '系统异常,添加失败'})
+
+
 def save_img(img_url):
     try:
         baseDir = os.path.dirname(os.path.abspath(__file__))
         baseDir = os.path.dirname(baseDir)
-        imgdir = os.path.join(baseDir, 'static', 'images\\')
+        imgdir = os.path.join(baseDir, 'static', 'images/')
         timesnap = datetime.now().strftime('%Y%m%d%H%M%S')
         file_suffix = '.jpg'
         img_name = '{}{}'.format(timesnap, file_suffix)
