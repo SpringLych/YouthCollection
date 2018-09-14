@@ -22,9 +22,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',RedirectView.as_view(url='/collection/')),
     url(r'^collection/',include('Collection.urls')),
-    
-    # 测试
-    url(r'^ajaxtest/', views.ajaxtest),
-
-    
 ]

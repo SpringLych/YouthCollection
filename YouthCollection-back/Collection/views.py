@@ -4,10 +4,11 @@ from __future__ import unicode_literals
 from django.shortcuts import render, HttpResponse, redirect
 from models import Article, Category, HeadArticle
 from datetime import datetime
+# from django.utils import timezone
 from django.http import JsonResponse
 from django.core import serializers
 import os
-
+import urllib
 # Create your views here.
 
 
@@ -35,7 +36,7 @@ def article(request, category):
             "desc": '',
             "url": ''
         }
-        fort["src"] = "/static/images/" + item["img_name"]
+        fort["src"] = '../static/images/'+item["img_name"]
         fort["title"] = item["title"]
         fort["desc"] = item["introduction"]
         fort["url"] = item["address"]
@@ -53,29 +54,30 @@ def admin(request):
 def add_article(request):
     if request.method == "POST":
         try:
-            img = request.FILES.get('image')
-            baseDir = os.path.dirname(os.path.abspath(__file__))
-            baseDir = os.path.dirname(baseDir)
-            imgdir = os.path.join(baseDir, 'static', 'images')
-            num = Article.objects.count() + 1
-            filename = "youth" + str(num) + img.name
-            filepath = os.path.join(imgdir, filename)
-            while(os.path.exists(filepath)):
-                num = num + 1
-                filename = "youth" + str(num) + img.name
-                filepath = os.path.join(imgdir, filename)
-            fileobj = open(filepath, 'wb')
-            for chrunk in img.chunks():
-                fileobj.write(chrunk)
-            fileobj.close()
+            # img = request.FILES.get('image')
+            # baseDir = os.path.dirname(os.path.abspath(__file__))
+            # baseDir = os.path.dirname(baseDir)
+            # imgdir = os.path.join(baseDir, 'static', 'images')
+            # num = Article.objects.count() + 1
+            # filename = "youth" + str(num) + img.name
+            # filepath = os.path.join(imgdir, filename)
+            # while(os.path.exists(filepath)):
+            #     num = num + 1
+            #     filename = "youth" + str(num) + img.name
+            #     filepath = os.path.join(imgdir, filename)
+            # fileobj = open(filepath, 'wb')
+            # for chrunk in img.chunks():
+            #     fileobj.write(chrunk)
+            # fileobj.close()
             category = request.POST.get('category')
             address = request.POST.get('address')
             title = request.POST.get('title')
             introduction = request.POST.get('introduction')
-            img_name = filename
-            timestamp = datetime.now()
+            # img_name = filename
+            img_url = request.POST.get('image')
+            img_name = save_img(img_url)
             article = Article(category=category, address=address, img_name=img_name,
-                              timestamp=timestamp, title=title, introduction=introduction)
+                              title=title, introduction=introduction)
             article.save()
             return render(request, 'success.html')
         except:
@@ -83,18 +85,34 @@ def add_article(request):
     else:
         return render(request, 'error.html', {'info': '系统异常,添加失败'})
 
-# 测试ajax成功
-
-
-def ajaxtest(request):
-    a = "来自ajaxtest"
-    return JsonResponse(a, safe=False)
-
 
 def get_head_article(request):
     head_art = HeadArticle.objects.filter().values(
         'url', 'img', 'title').order_by('-addtime')
-    head_art=list(head_art)
+    head_art = list(head_art)
     # 只获取最新的三个
     return_art = head_art[0:3]
     return JsonResponse(return_art, safe=False)
+
+
+def save_img(img_url):
+    try:
+        baseDir = os.path.dirname(os.path.abspath(__file__))
+        baseDir = os.path.dirname(baseDir)
+        imgdir = os.path.join(baseDir, 'static', 'images\\')
+        timesnap = datetime.now().strftime('%Y%m%d%H%M%S')
+        file_suffix = '.jpg'
+        img_name = '{}{}'.format(timesnap, file_suffix)
+        img_path = '{}{}'.format(imgdir, img_name)
+        num =  1
+        while(os.path.exists(img_path)):
+            num = num + 1
+            timesnap = timesnap + str(num)
+            img_name = '{}{}'.format(timesnap, file_suffix)
+            img_path = '{}{}'.format(imgdir, img_name)
+        urllib.urlretrieve(img_url, filename=img_path)
+    except IOError as e:
+        print e
+    except Exception as ee:
+        print ee
+    return img_name

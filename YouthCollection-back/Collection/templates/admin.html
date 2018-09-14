@@ -1,4 +1,5 @@
-<!DOCTYPE html> {% load static %}
+<!DOCTYPE html> 
+{% load static %}
 <html lang="en">
 
 <head>
@@ -12,28 +13,41 @@
     <div id="app">
         <form action="/collection/add_article/" method="POST" enctype="multipart/form-data">
             {%csrf_token%} 
+            <label for="title">推送标题</label>
+            <input type="text" id="title" name="title"><br>
+            <label for="intro">推送简介</label>
+            <input type="text" id="intro" name="introduction"><br>
             <label for="addr">网址</label> 
-            <input type="text" name="address" v-model.lazy="addr" id="addr" >
-            <label for="pic"> 封面图片：</label>
-           
-
-            <input type="file" name="image" accept="image/*" @change="getimg" id="pic" >
-            <img style="max-width:300px;max-height:300px" :src="src" /> 
+            <input type="text" name="address" id="addr" ><br>
+            <label for="pic"> 封面图片：(复制的图片链接)</label>
+            <!-- <input type="file" name="image" accept="image/*" @change="getimg" id="pic" > -->
+            <input type="text" id="title" name="image" v-model="imgurl"><br>
+            
             <label for="cate">栏目：</label> 
             <select name="category" id="cate">
                 {% for cate in category %}
                 <option value="{{cate.name}}">{{cate.name}}</option>
                 {%endfor%}
-            </select>
-            <label for="title">标题</label>
-            <input type="text" id="title" name="title">
-            <label for="intro">简介</label>
-            <input type="text" id="intro" name="introduction">
+            </select> <br>
             <input type="submit" value="提交" />
+            <p>图片预览：</p>
+            <img style="max-width:300px;max-height:300px" :src="imgurl" /> <br>
         </form>
     </div>
 </body>
 <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
 <script src="{%static 'js/admin.js' %}"></script>
-
+<script>
+    var app = new Vue({
+    el: '#app',
+    data: {
+        imgurl: '',
+    },
+});
+</script>
+<style>
+#app{
+    text-align: center
+}
+</style>
 </html>

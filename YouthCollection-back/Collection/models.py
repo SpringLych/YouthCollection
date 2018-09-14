@@ -7,12 +7,12 @@ from django.db import models
 class Article(models.Model):
     category=models.CharField(max_length=20)
     address=models.URLField()
-    img_name=models.CharField(max_length=150)
-    timestamp=models.DateTimeField()
+    img_name=models.TextField(max_length=1000)
+    timestamp=models.DateTimeField(auto_now=True)
     title=models.CharField(max_length=100)
     introduction=models.CharField(max_length=200)
 
-
+ 
 class Category(models.Model):
     name=models.CharField(max_length=20)
     identify=models.CharField(max_length=50)

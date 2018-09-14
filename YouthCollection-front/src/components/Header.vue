@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      baseUrl: "http://127.0.0.1:8000/collection/get_head_article/",
+      baseUrl: "",
 
       headerindex: 0,
       headerList: [],

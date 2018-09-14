@@ -1,1 +1,2363 @@
-#app{font-family:Avenir,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center;color:#2c3e50;margin-top:0}a{text-decoration:none}.hello,body,html{height:100%}body,html{width:100%;overflow-x:hidden;margin:0}.weui-media-box_appmsg{padding-top:0!important;padding-bottom:0!important}.weui-media-box__hd{width:90px!important;height:90px!important;display:-ms-flexbox;display:flex}.weui-media-box__thumb{width:auto!important;max-width:100%!important;margin:auto}.weui-media-box{height:100px}.weui-media-box__bd{text-align:left}.weui-media-box__title{white-space:unset!important;word-break:unset!important;margin-top:10px!important;margin-bottom:10px!important}.vux-tab-ink-bar{position:absolute;height:2px;bottom:0;left:0;background-color:#04be02;text-align:center}.vux-tab-ink-bar-transition-forward{transition:right .3s cubic-bezier(.35,0,.25,1),left .3s cubic-bezier(.35,0,.25,1) .09s}.vux-tab-ink-bar-transition-backward{transition:right .3s cubic-bezier(.35,0,.25,1) .09s,left .3s cubic-bezier(.35,0,.25,1)}.vux-tab-bar-top .vux-tab-ink-bar{top:0}.vux-tab{display:-ms-flexbox;display:flex;background-color:#fff;height:44px;position:relative}.vux-tab button{padding:0;border:0;outline:0;background:0 0;-webkit-appearance:none;-moz-appearance:none;appearance:none}.vux-tab .vux-tab-item{display:block;-ms-flex:1;flex:1;width:100%;height:100%;box-sizing:border-box;background:linear-gradient(180deg,#e5e5e5,#e5e5e5,hsla(0,0%,90%,0)) 0 100% no-repeat;background-size:100% 1px;font-size:14px;text-align:center;line-height:44px;color:#666}.vux-tab .vux-tab-item.vux-tab-selected{color:#04be02;border-bottom:3px solid #04be02}.vux-tab-bar-top .vux-tab .vux-tab-item{background:linear-gradient(180deg,#e5e5e5,#e5e5e5,hsla(0,0%,90%,0)) 0 0 no-repeat;background-size:100% 1px}.vux-tab-bar-top .vux-tab .vux-tab-item.vux-tab-selected{border-bottom:none;border-top:3px solid #04be02}.vux-tab .vux-tab-item.vux-tab-disabled{color:#ddd}.vux-tab.vux-tab-no-animate .vux-tab-item.vux-tab-selected{background:0 0}.vux-tab-bar-inner{display:block;background-color:#04be02;margin:auto;height:100%;transition:width .3s cubic-bezier(.35,0,.25,1)}.vux-tab-item-badge{position:absolute;top:0;bottom:0;box-sizing:border-box;display:inline-block;height:18px;min-width:18px;padding:0 4px;border-radius:30px;margin:auto 0 auto 4px;line-height:18px;font-size:11px;background-clip:padding-box;vertical-align:middle}.vux-tab-wrap{position:relative;padding-top:44px}.vux-tab-container{height:44px;top:0;left:0;right:0;overflow:hidden;position:absolute}.scrollable{overflow-y:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:17px;box-sizing:content-box}.scrollable::-webkit-scrollbar{display:none}.scrollable .vux-tab-ink-bar{bottom:17px;position:absolute}.scrollable .vux-tab-item{-ms-flex:0 0 22%;flex:0 0 22%}.vux-slider{overflow:hidden;position:relative}.vux-slider .vux-indicator-right,.vux-slider>.vux-indicator{position:absolute;right:15px;bottom:10px}.vux-slider .vux-indicator-right>a,.vux-slider>.vux-indicator>a{float:left;margin-left:6px}.vux-slider .vux-indicator-right>a>.vux-icon-dot,.vux-slider>.vux-indicator>a>.vux-icon-dot{display:inline-block;vertical-align:middle;width:6px;height:6px;border-radius:3px;background-color:#d0cdd1}.vux-slider .vux-indicator-right>a>.vux-icon-dot.active,.vux-slider>.vux-indicator>a>.vux-icon-dot.active{background-color:#04be02}.vux-slider>.vux-indicator-center{right:50%;transform:translateX(50%)}.vux-slider>.vux-indicator-left{left:15px;right:auto}.vux-slider>.vux-swiper{overflow:hidden;position:relative}.vux-slider>.vux-swiper>.vux-swiper-item{position:absolute;top:0;left:0;width:100%;height:100%}.vux-slider>.vux-swiper>.vux-swiper-item>a{display:block;width:100%;height:100%}.vux-slider>.vux-swiper>.vux-swiper-item>a>.vux-img{display:block;width:100%;height:100%;background:50% no-repeat;background-size:cover}.vux-slider>.vux-swiper>.vux-swiper-item>a>.vux-swiper-desc{position:absolute;left:0;right:0;bottom:0;height:1.4em;font-size:16px;padding:20px 50px 12px 13px;margin:0;background-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.7));color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.5);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal}.weui-tabbar{display:-ms-flexbox;display:flex;position:absolute;z-index:1;bottom:0;width:100%;background-color:#f7f7fa}.weui-tabbar:before{content:" ";position:absolute;left:0;top:0;right:0;height:1px;border-top:1px solid #c0bfc4;color:#c0bfc4;transform-origin:0 0;transform:scaleY(.5)}.weui-tabbar__item{display:block;-ms-flex:1;flex:1;padding:5px 0 0;font-size:0;color:#999;text-align:center;-webkit-tap-highlight-color:rgba(0,0,0,0)}.weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon,.weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon>i,.weui-tabbar__item.weui-bar__item_on .weui-tabbar__label{color:#09bb07}.weui-tabbar__icon{display:inline-block;width:27px;height:27px}.weui-tabbar__icon>i,i.weui-tabbar__icon{font-size:24px;color:#999}.weui-tabbar__icon img{width:100%;height:100%}.weui-tabbar__label{text-align:center;color:#999;font-size:10px;line-height:1.8}.weui-tab{position:relative;height:100%}.weui-tab__panel{box-sizing:border-box;height:100%;padding-bottom:50px;overflow:auto;-webkit-overflow-scrolling:touch}.weui-tab__content{display:none}.weui-cells{margin-top:1.17647059em;background-color:#fff;line-height:1.41176471;font-size:17px;overflow:hidden;position:relative}.weui-cells:before{top:0;border-top:1px solid #d9d9d9;transform-origin:0 0;transform:scaleY(.5)}.weui-cells:after,.weui-cells:before{content:" ";position:absolute;left:0;right:0;height:1px;color:#d9d9d9}.weui-cells:after{bottom:0;border-bottom:1px solid #d9d9d9;transform-origin:0 100%;transform:scaleY(.5)}.weui-cells__title{margin-top:.77em;margin-bottom:.3em;padding-left:15px;padding-right:15px;color:#999;font-size:14px}.weui-cells__title+.weui-cells{margin-top:0}.weui-cells__tips{margin-top:.3em;color:#999;padding-left:15px;padding-right:15px;font-size:14px}.weui-cell{padding:10px 15px;position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.weui-cell:before{content:" ";position:absolute;left:0;top:0;right:0;height:1px;border-top:1px solid #d9d9d9;color:#d9d9d9;transform-origin:0 0;transform:scaleY(.5);left:15px}.weui-cell:first-child:before{display:none}.weui-cell_primary{-ms-flex-align:start;align-items:flex-start}.weui-cell__bd{-ms-flex:1;flex:1}.weui-cell__ft{text-align:right;color:#999}.vux-cell-justify{height:1.41176471em}.vux-cell-justify.vux-cell-justify:after{content:".";display:inline-block;width:100%;overflow:hidden;height:0}.weui-cell_access{-webkit-tap-highlight-color:rgba(0,0,0,0);color:inherit}.weui-cell_access:active{background-color:#ececec}.weui-cell_access .weui-cell__ft{padding-right:13px;position:relative}.weui-cell_access .weui-cell__ft:after{content:" ";display:inline-block;height:6px;width:6px;border-width:2px 2px 0 0;border-color:#c8c8cd;border-style:solid;transform:matrix(.71,.71,-.71,.71,0,0);position:relative;top:-2px;position:absolute;top:50%;margin-top:-4px;right:2px}.weui-cell_link{color:#586c94;font-size:14px}.weui-cell_link.weui-cell:first-child:before{display:block}.weui-cell_access.vux-cell-box{padding-right:13px;position:relative}.weui-cell_access.vux-cell-box:after{content:" ";display:inline-block;height:6px;width:6px;border-width:2px 2px 0 0;border-color:#c8c8cd;border-style:solid;transform:matrix(.71,.71,-.71,.71,0,0);position:relative;top:-2px;position:absolute;top:50%;margin-top:-4px;right:17px}.weui-panel{background-color:#fff;margin-top:10px;position:relative;overflow:hidden}.weui-panel:first-child{margin-top:0}.weui-panel:before{top:0;border-top:1px solid #e5e5e5;transform-origin:0 0;transform:scaleY(.5)}.weui-panel:after,.weui-panel:before{content:" ";position:absolute;left:0;right:0;height:1px;color:#e5e5e5}.weui-panel:after{bottom:0;border-bottom:1px solid #e5e5e5;transform-origin:0 100%;transform:scaleY(.5)}.weui-panel__hd{padding:14px 15px 10px;color:#999;font-size:13px;position:relative}.weui-panel__hd:after{content:" ";position:absolute;left:0;bottom:0;right:0;height:1px;border-bottom:1px solid #e5e5e5;color:#e5e5e5;transform-origin:0 100%;transform:scaleY(.5);left:15px}.weui-media-box{padding:15px;position:relative}.weui-media-box:before{content:" ";position:absolute;left:0;top:0;right:0;height:1px;border-top:1px solid #e5e5e5;color:#e5e5e5;transform-origin:0 0;transform:scaleY(.5);left:15px}.weui-media-box:first-child:before{display:none}a.weui-media-box{color:#000;-webkit-tap-highlight-color:rgba(0,0,0,0)}a.weui-media-box:active{background-color:#ececec}.weui-media-box__title{font-weight:400;font-size:17px;width:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-wrap:break-word;word-break:break-all}.weui-media-box__desc{color:#999;font-size:13px;line-height:1.2;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2}.weui-media-box__info{margin-top:15px;padding-bottom:5px;font-size:13px;color:#cecece;line-height:1em;list-style:none;overflow:hidden}.weui-media-box__info__meta{float:left;padding-right:1em}.weui-media-box__info__meta_extra{padding-left:1em;border-left:1px solid #cecece}.weui-media-box_text .weui-media-box__title{margin-bottom:8px}.weui-media-box_appmsg{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.weui-media-box_appmsg .weui-media-box__hd{margin-right:.8em;width:60px;height:60px;line-height:60px;text-align:center}.weui-media-box_appmsg .weui-media-box__thumb{width:100%;max-height:100%;vertical-align:top}.weui-media-box_appmsg .weui-media-box__bd{-ms-flex:1;flex:1;min-width:0}.weui-media-box_small-appmsg{padding:0}.weui-media-box_small-appmsg .weui-cells{margin-top:0}.weui-media-box_small-appmsg .weui-cells:before{display:none}.vux-swiper-desc{padding:0 50px 12px 13px!important;font-size:18px!important;text-align:left}.vux-icon-dot.active{background-color:#3295d8!important}
+
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 0px;
+}
+a {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hello {
+  height: 100%;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+}
+.weui-media-box_appmsg {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.weui-media-box__hd {
+  width: 90px !important;
+  height: 90px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.weui-media-box__thumb {
+  width: auto !important;
+  max-width: 100% !important;
+  margin: auto;
+}
+.weui-media-box {
+  height: 100px;
+}
+.weui-media-box__bd {
+  text-align: left;
+}
+.weui-media-box__title {
+  white-space: unset !important;
+  word-break: unset !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+.weui-media-box__desc {
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical !important;
+  /* autoprefixer: on */
+}
+/**
+* actionsheet
+*/
+/**
+* en: primary type text color of menu item
+* zh-CN: 菜单项primary类型的文本颜色
+*/
+/**
+* en: warn type text color of menu item
+* zh-CN: 菜单项warn类型的文本颜色
+*/
+/**
+* en: default type text color of menu item
+* zh-CN: 菜单项default类型的文本颜色
+*/
+/**
+* en: disabled type text color of menu item
+* zh-CN: 菜单项disabled类型的文本颜色
+*/
+/**
+* datetime
+*/
+/**
+* tabbar
+*/
+/**
+* tab
+*/
+/**
+* dialog
+*/
+/**
+* en: title and content's padding-left and padding-right
+* zh-CN: 标题及内容区域的 padding-left 和 padding-right
+*/
+/**
+* x-number
+*/
+/**
+* checkbox
+*/
+/**
+* check-icon
+*/
+/**
+* Cell
+*/
+/**
+* Mask
+*/
+/**
+* Range
+*/
+/**
+* Tabbar
+*/
+/**
+* Header
+*/
+/**
+* Timeline
+*/
+/**
+* Switch
+*/
+/**
+* Button
+*/
+/**
+* en: border radius
+* zh-CN: 圆角边框
+*/
+/**
+* en: font color
+* zh-CN: 字体颜色
+*/
+/**
+* en: margin-top value between previous button, not works when there is only one button
+* zh-CN: 与相邻按钮的 margin-top 间隙，只有一个按钮时不生效
+*/
+/**
+* en: button height
+* zh-CN: 按钮高度
+*/
+/**
+* en: the font color in disabled
+* zh-CN: disabled状态下的字体颜色
+*/
+/**
+* en: the font color in disabled
+* zh-CN: disabled状态下的字体颜色
+*/
+/**
+* en: font size
+* zh-CN: 字体大小
+*/
+/**
+* en: the font size of the mini type
+* zh-CN: mini类型的字体大小
+*/
+/**
+* en: the line height of the mini type
+* zh-CN: mini类型的行高
+*/
+/**
+* en: the background color of the warn type
+* zh-CN: warn类型的背景颜色
+*/
+/**
+* en: the background color of the warn type in active
+* zh-CN: active状态下，warn类型的背景颜色
+*/
+/**
+* en: the background color of the warn type in disabled
+* zh-CN: disabled状态下，warn类型的背景颜色
+*/
+/**
+* en: the background color of the default type
+* zh-CN: default类型的背景颜色
+*/
+/**
+* en: the font color of the default type
+* zh-CN: default类型的字体颜色
+*/
+/**
+* en: the background color of the default type in active
+* zh-CN: active状态下，default类型的背景颜色
+*/
+/**
+* en: the font color of the default type in disabled
+* zh-CN: disabled状态下，default类型的字体颜色
+*/
+/**
+* en: the background color of the default type in disabled
+* zh-CN: disabled状态下，default类型的背景颜色
+*/
+/**
+* en: the font color of the default type in active
+* zh-CN: active状态下，default类型的字体颜色
+*/
+/**
+* en: the background color of the primary type
+* zh-CN: primary类型的背景颜色
+*/
+/**
+* en: the background color of the primary type in active
+* zh-CN: active状态下，primary类型的背景颜色
+*/
+/**
+* en: the background color of the primary type in disabled
+* zh-CN: disabled状态下，primary类型的背景颜色
+*/
+/**
+* en: the font color of the plain primary type
+* zh-CN: plain的primary类型的字体颜色
+*/
+/**
+* en: the border color of the plain primary type
+* zh-CN: plain的primary类型的边框颜色
+*/
+/**
+* en: the font color of the plain primary type in active
+* zh-CN: active状态下，plain的primary类型的字体颜色
+*/
+/**
+* en: the border color of the plain primary type in active
+* zh-CN: active状态下，plain的primary类型的边框颜色
+*/
+/**
+* en: the font color of the plain default type
+* zh-CN: plain的default类型的字体颜色
+*/
+/**
+* en: the border color of the plain default type
+* zh-CN: plain的default类型的边框颜色
+*/
+/**
+* en: the font color of the plain default type in active
+* zh-CN: active状态下，plain的default类型的字体颜色
+*/
+/**
+* en: the border color of the plain default type in active
+* zh-CN: active状态下，plain的default类型的边框颜色
+*/
+/**
+* en: the font color of the plain warn type
+* zh-CN: plain的warn类型的字体颜色
+*/
+/**
+* en: the border color of the plain warn type
+* zh-CN: plain的warn类型的边框颜色
+*/
+/**
+* en: the font color of the plain warn type in active
+* zh-CN: active状态下，plain的warn类型的字体颜色
+*/
+/**
+* en: the border color of the plain warn type in active
+* zh-CN: active状态下，plain的warn类型的边框颜色
+*/
+/**
+* swipeout
+*/
+/**
+* Cell
+*/
+/**
+* Badge
+*/
+/**
+* en: badge background color
+* zh-CN: badge的背景颜色
+*/
+/**
+* Popover
+*/
+/**
+* Button tab
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: border radius color
+* zh-CN: 圆角边框的半径
+*/
+/**
+* en: border color
+* zh-CN: 边框的颜色
+*/
+/**
+* en: not used
+* zh-CN: 默认状态下圆角边框的颜色
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: default background color
+* zh-CN: 默认状态下的背景颜色
+*/
+/**
+* en: selected background color
+* zh-CN: 选中状态下的背景颜色
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/* alias */
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: default text color
+* zh-CN: 默认状态下的文本颜色
+*/
+/**
+* en: height
+* zh-CN: 元素高度
+*/
+/**
+* en: line height
+* zh-CN: 元素行高
+*/
+/**
+* Swiper
+*/
+/**
+* checklist
+*/
+/**
+* popup-picker
+*/
+/**
+* popup
+*/
+/**
+* popup-header
+*/
+/**
+* form-preview
+*/
+/**
+* sticky
+*/
+/**
+* group
+*/
+/**
+* en: margin-top of title
+* zh-CN: 标题的margin-top
+*/
+/**
+* en: margin-bottom of title
+* zh-CN: 标题的margin-bottom
+*/
+/**
+* en: margin-top of footer title
+* zh-CN: 底部标题的margin-top
+*/
+/**
+* en: margin-bottom of footer title
+* zh-CN: 底部标题的margin-bottom
+*/
+/**
+* toast
+*/
+/**
+* en: text color of content
+* zh-CN: 内容文本颜色
+*/
+/**
+* en: default top
+* zh-CN: 默认状态下距离顶部的高度
+*/
+/**
+* en: position top
+* zh-CN: 顶部显示的高度
+*/
+/**
+* en: position bottom
+* zh-CN: 底部显示的高度
+*/
+/**
+* en: z-index
+* zh-CN: z-index
+*/
+/**
+* icon
+*/
+/**
+* calendar
+*/
+/**
+* en: forward and backward arrows color
+* zh-CN: 前进后退的箭头颜色
+*/
+/**
+* en: text color of week highlight
+* zh-CN: 周末高亮的文本颜色
+*/
+/**
+* en: background color when selected
+* zh-CN: 选中时的背景颜色
+*/
+/**
+* en: text color when disabled
+* zh-CN: 禁用时的文本颜色
+*/
+/**
+* en: text color of today
+* zh-CN: 今天的文本颜色
+*/
+/**
+* en: font size of cell
+* zh-CN: 单元格的字号
+*/
+/**
+* en: background color
+* zh-CN: 背景颜色
+*/
+/**
+* en: size of date cell
+* zh-CN: 日期单元格尺寸大小
+*/
+/**
+* en: line height of date cell
+* zh-CN: 日期单元格的行高
+*/
+/**
+* en: text color of header
+* zh-CN: 头部的文本颜色
+*/
+/**
+* week-calendar
+*/
+/**
+* search
+*/
+/**
+* en: text color of cancel button
+* zh-CN: 取消按钮文本颜色
+*/
+/**
+* en: background color
+* zh-CN: 背景颜色
+*/
+/**
+* en: text color of placeholder
+* zh-CN: placeholder文本颜色
+*/
+/**
+* radio
+*/
+/**
+* en: checked icon color
+* zh-CN: 选中状态的图标颜色
+*/
+/**
+* loadmore
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* loading
+*/
+/**
+* en: z-index
+* zh-CN: z-index
+*/
+.vux-tab-ink-bar {
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #04BE02;
+  text-align: center;
+}
+.vux-tab-ink-bar-transition-forward {
+  -webkit-transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1), left 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s;
+  transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1), left 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s;
+}
+.vux-tab-ink-bar-transition-backward {
+  -webkit-transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s, left 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s, left 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.vux-tab-bar-top .vux-tab-ink-bar {
+  top: 0;
+}
+.vux-tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  height: 44px;
+  position: relative;
+}
+.vux-tab button {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: 0 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.vux-tab .vux-tab-item {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), color-stop(#e5e5e5), to(rgba(229, 229, 229, 0))) bottom left no-repeat;
+  background: linear-gradient(180deg, #e5e5e5, #e5e5e5, rgba(229, 229, 229, 0)) bottom left no-repeat;
+  background-size: 100% 1px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 44px;
+  color: #666;
+}
+.vux-tab .vux-tab-item.vux-tab-selected {
+  color: #04BE02;
+  border-bottom: 3px solid #04BE02;
+}
+.vux-tab-bar-top .vux-tab .vux-tab-item {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), color-stop(#e5e5e5), to(rgba(229, 229, 229, 0))) top left no-repeat;
+  background: linear-gradient(180deg, #e5e5e5, #e5e5e5, rgba(229, 229, 229, 0)) top left no-repeat;
+  background-size: 100% 1px;
+}
+.vux-tab-bar-top .vux-tab .vux-tab-item.vux-tab-selected {
+  border-bottom: none;
+  border-top: 3px solid #04BE02;
+}
+.vux-tab .vux-tab-item.vux-tab-disabled {
+  color: #ddd;
+}
+.vux-tab.vux-tab-no-animate .vux-tab-item.vux-tab-selected {
+  background: 0 0;
+}
+/** when=prop:custom-bar-width **/
+.vux-tab-bar-inner {
+  display: block;
+  background-color: #04BE02;
+  margin: auto;
+  height: 100%;
+  -webkit-transition: width 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: width 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.vux-tab-item-badge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  height: 18px;
+  min-width: 18px;
+  padding: 0 4px;
+  border-radius: 30px;
+  margin: auto 0 auto 4px;
+  line-height: 18px;
+  font-size: 11px;
+  background-clip: padding-box;
+  vertical-align: middle;
+}
+.vux-tab-wrap {
+  position: relative;
+  padding-top: 44px;
+}
+.vux-tab-container {
+  height: 44px;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  position: absolute;
+}
+.scrollable {
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 17px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+.scrollable .vux-tab-ink-bar {
+  bottom: 17px;
+  position: absolute;
+}
+.scrollable .vux-tab-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 22%;
+          flex: 0 0 22%;
+}
+/**
+* actionsheet
+*/
+/**
+* en: primary type text color of menu item
+* zh-CN: 菜单项primary类型的文本颜色
+*/
+/**
+* en: warn type text color of menu item
+* zh-CN: 菜单项warn类型的文本颜色
+*/
+/**
+* en: default type text color of menu item
+* zh-CN: 菜单项default类型的文本颜色
+*/
+/**
+* en: disabled type text color of menu item
+* zh-CN: 菜单项disabled类型的文本颜色
+*/
+/**
+* datetime
+*/
+/**
+* tabbar
+*/
+/**
+* tab
+*/
+/**
+* dialog
+*/
+/**
+* en: title and content's padding-left and padding-right
+* zh-CN: 标题及内容区域的 padding-left 和 padding-right
+*/
+/**
+* x-number
+*/
+/**
+* checkbox
+*/
+/**
+* check-icon
+*/
+/**
+* Cell
+*/
+/**
+* Mask
+*/
+/**
+* Range
+*/
+/**
+* Tabbar
+*/
+/**
+* Header
+*/
+/**
+* Timeline
+*/
+/**
+* Switch
+*/
+/**
+* Button
+*/
+/**
+* en: border radius
+* zh-CN: 圆角边框
+*/
+/**
+* en: font color
+* zh-CN: 字体颜色
+*/
+/**
+* en: margin-top value between previous button, not works when there is only one button
+* zh-CN: 与相邻按钮的 margin-top 间隙，只有一个按钮时不生效
+*/
+/**
+* en: button height
+* zh-CN: 按钮高度
+*/
+/**
+* en: the font color in disabled
+* zh-CN: disabled状态下的字体颜色
+*/
+/**
+* en: the font color in disabled
+* zh-CN: disabled状态下的字体颜色
+*/
+/**
+* en: font size
+* zh-CN: 字体大小
+*/
+/**
+* en: the font size of the mini type
+* zh-CN: mini类型的字体大小
+*/
+/**
+* en: the line height of the mini type
+* zh-CN: mini类型的行高
+*/
+/**
+* en: the background color of the warn type
+* zh-CN: warn类型的背景颜色
+*/
+/**
+* en: the background color of the warn type in active
+* zh-CN: active状态下，warn类型的背景颜色
+*/
+/**
+* en: the background color of the warn type in disabled
+* zh-CN: disabled状态下，warn类型的背景颜色
+*/
+/**
+* en: the background color of the default type
+* zh-CN: default类型的背景颜色
+*/
+/**
+* en: the font color of the default type
+* zh-CN: default类型的字体颜色
+*/
+/**
+* en: the background color of the default type in active
+* zh-CN: active状态下，default类型的背景颜色
+*/
+/**
+* en: the font color of the default type in disabled
+* zh-CN: disabled状态下，default类型的字体颜色
+*/
+/**
+* en: the background color of the default type in disabled
+* zh-CN: disabled状态下，default类型的背景颜色
+*/
+/**
+* en: the font color of the default type in active
+* zh-CN: active状态下，default类型的字体颜色
+*/
+/**
+* en: the background color of the primary type
+* zh-CN: primary类型的背景颜色
+*/
+/**
+* en: the background color of the primary type in active
+* zh-CN: active状态下，primary类型的背景颜色
+*/
+/**
+* en: the background color of the primary type in disabled
+* zh-CN: disabled状态下，primary类型的背景颜色
+*/
+/**
+* en: the font color of the plain primary type
+* zh-CN: plain的primary类型的字体颜色
+*/
+/**
+* en: the border color of the plain primary type
+* zh-CN: plain的primary类型的边框颜色
+*/
+/**
+* en: the font color of the plain primary type in active
+* zh-CN: active状态下，plain的primary类型的字体颜色
+*/
+/**
+* en: the border color of the plain primary type in active
+* zh-CN: active状态下，plain的primary类型的边框颜色
+*/
+/**
+* en: the font color of the plain default type
+* zh-CN: plain的default类型的字体颜色
+*/
+/**
+* en: the border color of the plain default type
+* zh-CN: plain的default类型的边框颜色
+*/
+/**
+* en: the font color of the plain default type in active
+* zh-CN: active状态下，plain的default类型的字体颜色
+*/
+/**
+* en: the border color of the plain default type in active
+* zh-CN: active状态下，plain的default类型的边框颜色
+*/
+/**
+* en: the font color of the plain warn type
+* zh-CN: plain的warn类型的字体颜色
+*/
+/**
+* en: the border color of the plain warn type
+* zh-CN: plain的warn类型的边框颜色
+*/
+/**
+* en: the font color of the plain warn type in active
+* zh-CN: active状态下，plain的warn类型的字体颜色
+*/
+/**
+* en: the border color of the plain warn type in active
+* zh-CN: active状态下，plain的warn类型的边框颜色
+*/
+/**
+* swipeout
+*/
+/**
+* Cell
+*/
+/**
+* Badge
+*/
+/**
+* en: badge background color
+* zh-CN: badge的背景颜色
+*/
+/**
+* Popover
+*/
+/**
+* Button tab
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: border radius color
+* zh-CN: 圆角边框的半径
+*/
+/**
+* en: border color
+* zh-CN: 边框的颜色
+*/
+/**
+* en: not used
+* zh-CN: 默认状态下圆角边框的颜色
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: default background color
+* zh-CN: 默认状态下的背景颜色
+*/
+/**
+* en: selected background color
+* zh-CN: 选中状态下的背景颜色
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/* alias */
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: default text color
+* zh-CN: 默认状态下的文本颜色
+*/
+/**
+* en: height
+* zh-CN: 元素高度
+*/
+/**
+* en: line height
+* zh-CN: 元素行高
+*/
+/**
+* Swiper
+*/
+/**
+* checklist
+*/
+/**
+* popup-picker
+*/
+/**
+* popup
+*/
+/**
+* popup-header
+*/
+/**
+* form-preview
+*/
+/**
+* sticky
+*/
+/**
+* group
+*/
+/**
+* en: margin-top of title
+* zh-CN: 标题的margin-top
+*/
+/**
+* en: margin-bottom of title
+* zh-CN: 标题的margin-bottom
+*/
+/**
+* en: margin-top of footer title
+* zh-CN: 底部标题的margin-top
+*/
+/**
+* en: margin-bottom of footer title
+* zh-CN: 底部标题的margin-bottom
+*/
+/**
+* toast
+*/
+/**
+* en: text color of content
+* zh-CN: 内容文本颜色
+*/
+/**
+* en: default top
+* zh-CN: 默认状态下距离顶部的高度
+*/
+/**
+* en: position top
+* zh-CN: 顶部显示的高度
+*/
+/**
+* en: position bottom
+* zh-CN: 底部显示的高度
+*/
+/**
+* en: z-index
+* zh-CN: z-index
+*/
+/**
+* icon
+*/
+/**
+* calendar
+*/
+/**
+* en: forward and backward arrows color
+* zh-CN: 前进后退的箭头颜色
+*/
+/**
+* en: text color of week highlight
+* zh-CN: 周末高亮的文本颜色
+*/
+/**
+* en: background color when selected
+* zh-CN: 选中时的背景颜色
+*/
+/**
+* en: text color when disabled
+* zh-CN: 禁用时的文本颜色
+*/
+/**
+* en: text color of today
+* zh-CN: 今天的文本颜色
+*/
+/**
+* en: font size of cell
+* zh-CN: 单元格的字号
+*/
+/**
+* en: background color
+* zh-CN: 背景颜色
+*/
+/**
+* en: size of date cell
+* zh-CN: 日期单元格尺寸大小
+*/
+/**
+* en: line height of date cell
+* zh-CN: 日期单元格的行高
+*/
+/**
+* en: text color of header
+* zh-CN: 头部的文本颜色
+*/
+/**
+* week-calendar
+*/
+/**
+* search
+*/
+/**
+* en: text color of cancel button
+* zh-CN: 取消按钮文本颜色
+*/
+/**
+* en: background color
+* zh-CN: 背景颜色
+*/
+/**
+* en: text color of placeholder
+* zh-CN: placeholder文本颜色
+*/
+/**
+* radio
+*/
+/**
+* en: checked icon color
+* zh-CN: 选中状态的图标颜色
+*/
+/**
+* loadmore
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* loading
+*/
+/**
+* en: z-index
+* zh-CN: z-index
+*/
+.vux-slider {
+  overflow: hidden;
+  position: relative;
+}
+.vux-slider > .vux-indicator,
+.vux-slider .vux-indicator-right {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+}
+.vux-slider > .vux-indicator > a,
+.vux-slider .vux-indicator-right > a {
+  float: left;
+  margin-left: 6px;
+}
+.vux-slider > .vux-indicator > a > .vux-icon-dot,
+.vux-slider .vux-indicator-right > a > .vux-icon-dot {
+  display: inline-block;
+  vertical-align: middle;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #d0cdd1;
+}
+.vux-slider > .vux-indicator > a > .vux-icon-dot.active,
+.vux-slider .vux-indicator-right > a > .vux-icon-dot.active {
+  background-color: #04BE02;
+}
+.vux-slider > .vux-indicator-center {
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+.vux-slider > .vux-indicator-left {
+  left: 15px;
+  right: auto;
+}
+.vux-slider > .vux-swiper {
+  overflow: hidden;
+  position: relative;
+}
+.vux-slider > .vux-swiper > .vux-swiper-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.vux-slider > .vux-swiper > .vux-swiper-item > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.vux-slider > .vux-swiper > .vux-swiper-item > a > .vux-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: center center no-repeat;
+  background-size: cover;
+}
+.vux-slider > .vux-swiper > .vux-swiper-item > a > .vux-swiper-desc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.4em;
+  font-size: 16px;
+  padding: 20px 50px 12px 13px;
+  margin: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.7)));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.7) 100%);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+/**
+* actionsheet
+*/
+/**
+* en: primary type text color of menu item
+* zh-CN: 菜单项primary类型的文本颜色
+*/
+/**
+* en: warn type text color of menu item
+* zh-CN: 菜单项warn类型的文本颜色
+*/
+/**
+* en: default type text color of menu item
+* zh-CN: 菜单项default类型的文本颜色
+*/
+/**
+* en: disabled type text color of menu item
+* zh-CN: 菜单项disabled类型的文本颜色
+*/
+/**
+* datetime
+*/
+/**
+* tabbar
+*/
+/**
+* tab
+*/
+/**
+* dialog
+*/
+/**
+* en: title and content's padding-left and padding-right
+* zh-CN: 标题及内容区域的 padding-left 和 padding-right
+*/
+/**
+* x-number
+*/
+/**
+* checkbox
+*/
+/**
+* check-icon
+*/
+/**
+* Cell
+*/
+/**
+* Mask
+*/
+/**
+* Range
+*/
+/**
+* Tabbar
+*/
+/**
+* Header
+*/
+/**
+* Timeline
+*/
+/**
+* Switch
+*/
+/**
+* Button
+*/
+/**
+* en: border radius
+* zh-CN: 圆角边框
+*/
+/**
+* en: font color
+* zh-CN: 字体颜色
+*/
+/**
+* en: margin-top value between previous button, not works when there is only one button
+* zh-CN: 与相邻按钮的 margin-top 间隙，只有一个按钮时不生效
+*/
+/**
+* en: button height
+* zh-CN: 按钮高度
+*/
+/**
+* en: the font color in disabled
+* zh-CN: disabled状态下的字体颜色
+*/
+/**
+* en: the font color in disabled
+* zh-CN: disabled状态下的字体颜色
+*/
+/**
+* en: font size
+* zh-CN: 字体大小
+*/
+/**
+* en: the font size of the mini type
+* zh-CN: mini类型的字体大小
+*/
+/**
+* en: the line height of the mini type
+* zh-CN: mini类型的行高
+*/
+/**
+* en: the background color of the warn type
+* zh-CN: warn类型的背景颜色
+*/
+/**
+* en: the background color of the warn type in active
+* zh-CN: active状态下，warn类型的背景颜色
+*/
+/**
+* en: the background color of the warn type in disabled
+* zh-CN: disabled状态下，warn类型的背景颜色
+*/
+/**
+* en: the background color of the default type
+* zh-CN: default类型的背景颜色
+*/
+/**
+* en: the font color of the default type
+* zh-CN: default类型的字体颜色
+*/
+/**
+* en: the background color of the default type in active
+* zh-CN: active状态下，default类型的背景颜色
+*/
+/**
+* en: the font color of the default type in disabled
+* zh-CN: disabled状态下，default类型的字体颜色
+*/
+/**
+* en: the background color of the default type in disabled
+* zh-CN: disabled状态下，default类型的背景颜色
+*/
+/**
+* en: the font color of the default type in active
+* zh-CN: active状态下，default类型的字体颜色
+*/
+/**
+* en: the background color of the primary type
+* zh-CN: primary类型的背景颜色
+*/
+/**
+* en: the background color of the primary type in active
+* zh-CN: active状态下，primary类型的背景颜色
+*/
+/**
+* en: the background color of the primary type in disabled
+* zh-CN: disabled状态下，primary类型的背景颜色
+*/
+/**
+* en: the font color of the plain primary type
+* zh-CN: plain的primary类型的字体颜色
+*/
+/**
+* en: the border color of the plain primary type
+* zh-CN: plain的primary类型的边框颜色
+*/
+/**
+* en: the font color of the plain primary type in active
+* zh-CN: active状态下，plain的primary类型的字体颜色
+*/
+/**
+* en: the border color of the plain primary type in active
+* zh-CN: active状态下，plain的primary类型的边框颜色
+*/
+/**
+* en: the font color of the plain default type
+* zh-CN: plain的default类型的字体颜色
+*/
+/**
+* en: the border color of the plain default type
+* zh-CN: plain的default类型的边框颜色
+*/
+/**
+* en: the font color of the plain default type in active
+* zh-CN: active状态下，plain的default类型的字体颜色
+*/
+/**
+* en: the border color of the plain default type in active
+* zh-CN: active状态下，plain的default类型的边框颜色
+*/
+/**
+* en: the font color of the plain warn type
+* zh-CN: plain的warn类型的字体颜色
+*/
+/**
+* en: the border color of the plain warn type
+* zh-CN: plain的warn类型的边框颜色
+*/
+/**
+* en: the font color of the plain warn type in active
+* zh-CN: active状态下，plain的warn类型的字体颜色
+*/
+/**
+* en: the border color of the plain warn type in active
+* zh-CN: active状态下，plain的warn类型的边框颜色
+*/
+/**
+* swipeout
+*/
+/**
+* Cell
+*/
+/**
+* Badge
+*/
+/**
+* en: badge background color
+* zh-CN: badge的背景颜色
+*/
+/**
+* Popover
+*/
+/**
+* Button tab
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: border radius color
+* zh-CN: 圆角边框的半径
+*/
+/**
+* en: border color
+* zh-CN: 边框的颜色
+*/
+/**
+* en: not used
+* zh-CN: 默认状态下圆角边框的颜色
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: default background color
+* zh-CN: 默认状态下的背景颜色
+*/
+/**
+* en: selected background color
+* zh-CN: 选中状态下的背景颜色
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/* alias */
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: default text color
+* zh-CN: 默认状态下的文本颜色
+*/
+/**
+* en: height
+* zh-CN: 元素高度
+*/
+/**
+* en: line height
+* zh-CN: 元素行高
+*/
+/**
+* Swiper
+*/
+/**
+* checklist
+*/
+/**
+* popup-picker
+*/
+/**
+* popup
+*/
+/**
+* popup-header
+*/
+/**
+* form-preview
+*/
+/**
+* sticky
+*/
+/**
+* group
+*/
+/**
+* en: margin-top of title
+* zh-CN: 标题的margin-top
+*/
+/**
+* en: margin-bottom of title
+* zh-CN: 标题的margin-bottom
+*/
+/**
+* en: margin-top of footer title
+* zh-CN: 底部标题的margin-top
+*/
+/**
+* en: margin-bottom of footer title
+* zh-CN: 底部标题的margin-bottom
+*/
+/**
+* toast
+*/
+/**
+* en: text color of content
+* zh-CN: 内容文本颜色
+*/
+/**
+* en: default top
+* zh-CN: 默认状态下距离顶部的高度
+*/
+/**
+* en: position top
+* zh-CN: 顶部显示的高度
+*/
+/**
+* en: position bottom
+* zh-CN: 底部显示的高度
+*/
+/**
+* en: z-index
+* zh-CN: z-index
+*/
+/**
+* icon
+*/
+/**
+* calendar
+*/
+/**
+* en: forward and backward arrows color
+* zh-CN: 前进后退的箭头颜色
+*/
+/**
+* en: text color of week highlight
+* zh-CN: 周末高亮的文本颜色
+*/
+/**
+* en: background color when selected
+* zh-CN: 选中时的背景颜色
+*/
+/**
+* en: text color when disabled
+* zh-CN: 禁用时的文本颜色
+*/
+/**
+* en: text color of today
+* zh-CN: 今天的文本颜色
+*/
+/**
+* en: font size of cell
+* zh-CN: 单元格的字号
+*/
+/**
+* en: background color
+* zh-CN: 背景颜色
+*/
+/**
+* en: size of date cell
+* zh-CN: 日期单元格尺寸大小
+*/
+/**
+* en: line height of date cell
+* zh-CN: 日期单元格的行高
+*/
+/**
+* en: text color of header
+* zh-CN: 头部的文本颜色
+*/
+/**
+* week-calendar
+*/
+/**
+* search
+*/
+/**
+* en: text color of cancel button
+* zh-CN: 取消按钮文本颜色
+*/
+/**
+* en: background color
+* zh-CN: 背景颜色
+*/
+/**
+* en: text color of placeholder
+* zh-CN: placeholder文本颜色
+*/
+/**
+* radio
+*/
+/**
+* en: checked icon color
+* zh-CN: 选中状态的图标颜色
+*/
+/**
+* loadmore
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* loading
+*/
+/**
+* en: z-index
+* zh-CN: z-index
+*/
+.weui-tabbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 500;
+  bottom: 0;
+  width: 100%;
+  background-color: #F7F7FA;
+}
+.weui-tabbar:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #C0BFC4;
+  color: #C0BFC4;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+.weui-tabbar__item {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 5px 0 0;
+  font-size: 0;
+  color: #999999;
+  text-align: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon,
+.weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon > i,
+.weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+  color: #09BB07;
+}
+.weui-tabbar__icon {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+}
+i.weui-tabbar__icon,
+.weui-tabbar__icon > i {
+  font-size: 24px;
+  color: #999999;
+}
+.weui-tabbar__icon img {
+  width: 100%;
+  height: 100%;
+}
+.weui-tabbar__label {
+  text-align: center;
+  color: #999999;
+  font-size: 10px;
+  line-height: 1.8;
+}
+.weui-tab {
+  position: relative;
+  height: 100%;
+}
+.weui-tab__panel {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  padding-bottom: 50px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.weui-tab__content {
+  display: none;
+}
+/**
+* actionsheet
+*/
+/**
+* en: primary type text color of menu item
+* zh-CN: 菜单项primary类型的文本颜色
+*/
+/**
+* en: warn type text color of menu item
+* zh-CN: 菜单项warn类型的文本颜色
+*/
+/**
+* en: default type text color of menu item
+* zh-CN: 菜单项default类型的文本颜色
+*/
+/**
+* en: disabled type text color of menu item
+* zh-CN: 菜单项disabled类型的文本颜色
+*/
+/**
+* datetime
+*/
+/**
+* tabbar
+*/
+/**
+* tab
+*/
+/**
+* dialog
+*/
+/**
+* en: title and content's padding-left and padding-right
+* zh-CN: 标题及内容区域的 padding-left 和 padding-right
+*/
+/**
+* x-number
+*/
+/**
+* checkbox
+*/
+/**
+* check-icon
+*/
+/**
+* Cell
+*/
+/**
+* Mask
+*/
+/**
+* Range
+*/
+/**
+* Tabbar
+*/
+/**
+* Header
+*/
+/**
+* Timeline
+*/
+/**
+* Switch
+*/
+/**
+* Button
+*/
+/**
+* en: border radius
+* zh-CN: 圆角边框
+*/
+/**
+* en: font color
+* zh-CN: 字体颜色
+*/
+/**
+* en: margin-top value between previous button, not works when there is only one button
+* zh-CN: 与相邻按钮的 margin-top 间隙，只有一个按钮时不生效
+*/
+/**
+* en: button height
+* zh-CN: 按钮高度
+*/
+/**
+* en: the font color in disabled
+* zh-CN: disabled状态下的字体颜色
+*/
+/**
+* en: the font color in disabled
+* zh-CN: disabled状态下的字体颜色
+*/
+/**
+* en: font size
+* zh-CN: 字体大小
+*/
+/**
+* en: the font size of the mini type
+* zh-CN: mini类型的字体大小
+*/
+/**
+* en: the line height of the mini type
+* zh-CN: mini类型的行高
+*/
+/**
+* en: the background color of the warn type
+* zh-CN: warn类型的背景颜色
+*/
+/**
+* en: the background color of the warn type in active
+* zh-CN: active状态下，warn类型的背景颜色
+*/
+/**
+* en: the background color of the warn type in disabled
+* zh-CN: disabled状态下，warn类型的背景颜色
+*/
+/**
+* en: the background color of the default type
+* zh-CN: default类型的背景颜色
+*/
+/**
+* en: the font color of the default type
+* zh-CN: default类型的字体颜色
+*/
+/**
+* en: the background color of the default type in active
+* zh-CN: active状态下，default类型的背景颜色
+*/
+/**
+* en: the font color of the default type in disabled
+* zh-CN: disabled状态下，default类型的字体颜色
+*/
+/**
+* en: the background color of the default type in disabled
+* zh-CN: disabled状态下，default类型的背景颜色
+*/
+/**
+* en: the font color of the default type in active
+* zh-CN: active状态下，default类型的字体颜色
+*/
+/**
+* en: the background color of the primary type
+* zh-CN: primary类型的背景颜色
+*/
+/**
+* en: the background color of the primary type in active
+* zh-CN: active状态下，primary类型的背景颜色
+*/
+/**
+* en: the background color of the primary type in disabled
+* zh-CN: disabled状态下，primary类型的背景颜色
+*/
+/**
+* en: the font color of the plain primary type
+* zh-CN: plain的primary类型的字体颜色
+*/
+/**
+* en: the border color of the plain primary type
+* zh-CN: plain的primary类型的边框颜色
+*/
+/**
+* en: the font color of the plain primary type in active
+* zh-CN: active状态下，plain的primary类型的字体颜色
+*/
+/**
+* en: the border color of the plain primary type in active
+* zh-CN: active状态下，plain的primary类型的边框颜色
+*/
+/**
+* en: the font color of the plain default type
+* zh-CN: plain的default类型的字体颜色
+*/
+/**
+* en: the border color of the plain default type
+* zh-CN: plain的default类型的边框颜色
+*/
+/**
+* en: the font color of the plain default type in active
+* zh-CN: active状态下，plain的default类型的字体颜色
+*/
+/**
+* en: the border color of the plain default type in active
+* zh-CN: active状态下，plain的default类型的边框颜色
+*/
+/**
+* en: the font color of the plain warn type
+* zh-CN: plain的warn类型的字体颜色
+*/
+/**
+* en: the border color of the plain warn type
+* zh-CN: plain的warn类型的边框颜色
+*/
+/**
+* en: the font color of the plain warn type in active
+* zh-CN: active状态下，plain的warn类型的字体颜色
+*/
+/**
+* en: the border color of the plain warn type in active
+* zh-CN: active状态下，plain的warn类型的边框颜色
+*/
+/**
+* swipeout
+*/
+/**
+* Cell
+*/
+/**
+* Badge
+*/
+/**
+* en: badge background color
+* zh-CN: badge的背景颜色
+*/
+/**
+* Popover
+*/
+/**
+* Button tab
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: border radius color
+* zh-CN: 圆角边框的半径
+*/
+/**
+* en: border color
+* zh-CN: 边框的颜色
+*/
+/**
+* en: not used
+* zh-CN: 默认状态下圆角边框的颜色
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: default background color
+* zh-CN: 默认状态下的背景颜色
+*/
+/**
+* en: selected background color
+* zh-CN: 选中状态下的背景颜色
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/* alias */
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* en: default text color
+* zh-CN: 默认状态下的文本颜色
+*/
+/**
+* en: height
+* zh-CN: 元素高度
+*/
+/**
+* en: line height
+* zh-CN: 元素行高
+*/
+/**
+* Swiper
+*/
+/**
+* checklist
+*/
+/**
+* popup-picker
+*/
+/**
+* popup
+*/
+/**
+* popup-header
+*/
+/**
+* form-preview
+*/
+/**
+* sticky
+*/
+/**
+* group
+*/
+/**
+* en: margin-top of title
+* zh-CN: 标题的margin-top
+*/
+/**
+* en: margin-bottom of title
+* zh-CN: 标题的margin-bottom
+*/
+/**
+* en: margin-top of footer title
+* zh-CN: 底部标题的margin-top
+*/
+/**
+* en: margin-bottom of footer title
+* zh-CN: 底部标题的margin-bottom
+*/
+/**
+* toast
+*/
+/**
+* en: text color of content
+* zh-CN: 内容文本颜色
+*/
+/**
+* en: default top
+* zh-CN: 默认状态下距离顶部的高度
+*/
+/**
+* en: position top
+* zh-CN: 顶部显示的高度
+*/
+/**
+* en: position bottom
+* zh-CN: 底部显示的高度
+*/
+/**
+* en: z-index
+* zh-CN: z-index
+*/
+/**
+* icon
+*/
+/**
+* calendar
+*/
+/**
+* en: forward and backward arrows color
+* zh-CN: 前进后退的箭头颜色
+*/
+/**
+* en: text color of week highlight
+* zh-CN: 周末高亮的文本颜色
+*/
+/**
+* en: background color when selected
+* zh-CN: 选中时的背景颜色
+*/
+/**
+* en: text color when disabled
+* zh-CN: 禁用时的文本颜色
+*/
+/**
+* en: text color of today
+* zh-CN: 今天的文本颜色
+*/
+/**
+* en: font size of cell
+* zh-CN: 单元格的字号
+*/
+/**
+* en: background color
+* zh-CN: 背景颜色
+*/
+/**
+* en: size of date cell
+* zh-CN: 日期单元格尺寸大小
+*/
+/**
+* en: line height of date cell
+* zh-CN: 日期单元格的行高
+*/
+/**
+* en: text color of header
+* zh-CN: 头部的文本颜色
+*/
+/**
+* week-calendar
+*/
+/**
+* search
+*/
+/**
+* en: text color of cancel button
+* zh-CN: 取消按钮文本颜色
+*/
+/**
+* en: background color
+* zh-CN: 背景颜色
+*/
+/**
+* en: text color of placeholder
+* zh-CN: placeholder文本颜色
+*/
+/**
+* radio
+*/
+/**
+* en: checked icon color
+* zh-CN: 选中状态的图标颜色
+*/
+/**
+* loadmore
+*/
+/**
+* en: not used
+* zh-CN: 未被使用
+*/
+/**
+* loading
+*/
+/**
+* en: z-index
+* zh-CN: z-index
+*/
+.weui-cells {
+  margin-top: 1.17647059em;
+  background-color: #FFFFFF;
+  line-height: 1.41176471;
+  font-size: 17px;
+  overflow: hidden;
+  position: relative;
+}
+.weui-cells:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+.weui-cells:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+.weui-cells__title {
+  margin-top: 0.77em;
+  margin-bottom: 0.3em;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #999999;
+  font-size: 14px;
+}
+.weui-cells__title + .weui-cells {
+  margin-top: 0;
+}
+.weui-cells__tips {
+  margin-top: 0.3em;
+  color: #999999;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 14px;
+}
+.weui-cell {
+  padding: 10px 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.weui-cell:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  left: 15px;
+}
+.weui-cell:first-child:before {
+  display: none;
+}
+.weui-cell_primary {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.weui-cell__bd {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.weui-cell__ft {
+  text-align: right;
+  color: #999999;
+}
+.vux-cell-justify {
+  height: 1.41176471em;
+}
+.vux-cell-justify.vux-cell-justify:after {
+  content: ".";
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  height: 0;
+}
+.weui-cell_access {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: inherit;
+}
+.weui-cell_access:active {
+  background-color: #ECECEC;
+}
+.weui-cell_access .weui-cell__ft {
+  padding-right: 13px;
+  position: relative;
+}
+.weui-cell_access .weui-cell__ft:after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #C8C8CD;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+          transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: relative;
+  top: -2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}
+.weui-cell_link {
+  color: #586C94;
+  font-size: 14px;
+}
+.weui-cell_link.weui-cell:first-child:before {
+  display: block;
+}
+.weui-cell_access.vux-cell-box {
+  padding-right: 13px;
+  position: relative;
+}
+.weui-cell_access.vux-cell-box:after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #C8C8CD;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+          transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: relative;
+  top: -2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 17px;
+}
+.weui-panel {
+  background-color: #FFFFFF;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.weui-panel:first-child {
+  margin-top: 0;
+}
+.weui-panel:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #E5E5E5;
+  color: #E5E5E5;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+.weui-panel:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #E5E5E5;
+  color: #E5E5E5;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+.weui-panel__hd {
+  padding: 14px 15px 10px;
+  color: #999999;
+  font-size: 13px;
+  position: relative;
+}
+.weui-panel__hd:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #E5E5E5;
+  color: #E5E5E5;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  left: 15px;
+}
+.weui-media-box {
+  padding: 15px;
+  position: relative;
+}
+.weui-media-box:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #E5E5E5;
+  color: #E5E5E5;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  left: 15px;
+}
+.weui-media-box:first-child:before {
+  display: none;
+}
+a.weui-media-box {
+  color: #000000;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a.weui-media-box:active {
+  background-color: #ECECEC;
+}
+.weui-media-box__title {
+  font-weight: 400;
+  font-size: 17px;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.weui-media-box__desc {
+  color: #999999;
+  font-size: 13px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.weui-media-box__info {
+  margin-top: 15px;
+  padding-bottom: 5px;
+  font-size: 13px;
+  color: #CECECE;
+  line-height: 1em;
+  list-style: none;
+  overflow: hidden;
+}
+.weui-media-box__info__meta {
+  float: left;
+  padding-right: 1em;
+}
+.weui-media-box__info__meta_extra {
+  padding-left: 1em;
+  border-left: 1px solid #CECECE;
+}
+.weui-media-box_text .weui-media-box__title {
+  margin-bottom: 8px;
+}
+.weui-media-box_appmsg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.weui-media-box_appmsg .weui-media-box__hd {
+  margin-right: 0.8em;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.weui-media-box_appmsg .weui-media-box__thumb {
+  width: 100%;
+  max-height: 100%;
+  vertical-align: top;
+}
+.weui-media-box_appmsg .weui-media-box__bd {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 0;
+}
+.weui-media-box_small-appmsg {
+  padding: 0;
+}
+.weui-media-box_small-appmsg .weui-cells {
+  margin-top: 0;
+}
+.weui-media-box_small-appmsg .weui-cells:before {
+  display: none;
+}
+
+.vux-swiper-desc {
+  padding: 0px 50px 12px 13px !important;
+  font-size: 18px !important;
+  text-align: left;
+}
+.vux-icon-dot.active {
+  background-color: #3295d8 !important;
+}
+
+/*# sourceMappingURL=app.f25d56250c0aafa6c2f75d7c18a8993d.css.map*/

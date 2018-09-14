@@ -2,7 +2,7 @@
   <div class="hello">
     <div style="height:100%;">
       <tab active-color='#3295D8' v-model="index">
-        <tab-item selected @on-item-click="getArticles(index0.data)">{{index0.title}}</tab-item>
+        <tab-item @on-item-click="getArticles(index0.data)">{{index0.title}}</tab-item>
         <tab-item @on-item-click="getArticles(index1.data)">{{index1.title}}</tab-item>
         <tab-item @on-item-click="getArticles(index2.data)">{{index2.title}}</tab-item>
         <tab-item @on-item-click="getArticles(index3.data)">{{index3.title}}</tab-item>
@@ -17,7 +17,7 @@
           <panel :list="index0.articles" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===1">
-          <panel :list="index1.articles" :type="type" :footer="footer"></panel>
+          <panel :list="list" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===2">
           <panel :list="index2.articles" :type="type" :footer="footer"></panel>
@@ -32,7 +32,7 @@
           <panel :list="index5.articles" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===6">
-          <panel :list="index6.articles" :type="type" :footer="footer"></panel>
+          <panel :list="list" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===7">
           <panel :list="index7.articles" :type="type" :footer="footer"></panel>
@@ -57,7 +57,7 @@ export default {
   },
   data() {
     return {
-      baseurl: "http://127.0.0.1:8000/collection/article/",
+      baseurl: "",
       categoryUrl: "",
       index: 0,
 
@@ -67,42 +67,42 @@ export default {
       index0: {
         title: "精选",
         data: "jingxuan",
-        articles: []
+        articles: [],
       },
       index1: {
         title: "美人志",
         data: "meirenzhi",
-        articles: []
+        articles: [],
       },
       index2: {
         title: "男神志",
         data: "nanshenzhi",
-        articles: []
+        articles: [],
       },
       index3: {
         title: "线上活动",
         data: "xianshanghuodong",
-        articles: []
+        articles: [],
       },
       index4: {
         title: "牛人志",
         data: "niurenzhi",
-        articles: []
+        articles: [],
       },
       index5: {
         title: "美食志",
         data: "meishizhi",
-        articles: []
+        articles: [],
       },
       index6: {
         title: "路人志",
         data: "lurenzhi",
-        articles: []
+        articles: [],
       },
       index7: {
         title: "青年观察",
         data: "qingnianguancha",
-        articles: []
+        articles: [],
       },
 
       list: [
@@ -134,7 +134,7 @@ export default {
         }
       ],
       footer: {
-        title: "©交大有思·实验室",
+        title: "©交大有思",
         url: null
       }
     };
@@ -156,8 +156,8 @@ export default {
         method: "GET",
         url: this.categoryUrl,
         headers: {
-          // "Access-Control-Allow-Origin": "*",
-          // "Access-Control-Allow-Headers": "origin, content-type, accept",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "origin, content-type, accept",
           "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
         }
       }).then(response => {
