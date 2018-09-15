@@ -32,7 +32,7 @@
           <panel :list="index5.articles" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===6">
-          <panel :list="list" :type="type" :footer="footer"></panel>
+          <panel :list="index6.articles" :type="type" :footer="footer"></panel>
         </div>
         <div v-if="index===7">
           <panel :list="index7.articles" :type="type" :footer="footer"></panel>
@@ -104,35 +104,6 @@ export default {
         data: "qingnianguancha",
         articles: [],
       },
-
-      // list: [
-      //   {
-      //     src: "../../static/images/640.webp",
-      //     title: "不会马赛回旋的甜妹不是好dancer",
-      //     desc:
-      //       "在刚接手这篇美人志时，本思很担心写不出好的文章来介绍这期美人志的主人公，因为她实在是太特别了（内心是崩溃的）。",
-      //     url: "https://mp.weixin.qq.com/s/1FdaSQPsRcilNwrIUCrMmA"
-      //   },
-      //   {
-      //     src:
-      //       "https://mmbiz.qpic.cn/mmbiz_jpg/H23VLtfialwxibdBmRSHBXdCChlYBEC2kkeAKWyUrePTxtVV1J7FFZSicHclhlfYgZq42VP6TKjsUDUGhxJDQlTqA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1",
-      //     title: "从时尚大片走出来的辅导员",
-      //     desc:
-      //       "看到这些标签，你会想到谁？外国语学院14级本科辅导员\n外国语学院学生会指导老师\n汉语国际教育系三年级研究生",
-      //     url: {
-      //       path: "https://mp.weixin.qq.com/s/wGMriH1AjwLKtknwkWXwYg",
-      //       replace: false
-      //     }
-      //   },
-      //   {
-      //     src: "../../static/images/6402.webp",
-      //     // fallbackSrc: "http://placeholder.qiniudn.com/60x60/3cc51f/ffffff",
-      //     title: "山川河海与神明，都是你的",
-      //     desc:
-      //       "『喔对了思思，你上次问我的用来形容自己的词……我想了想，只想到了爱笑』\n『然后还很好懂，不对，好懂算缺点，我做人太透明了就很没意思』",
-      //     url: "https://mp.weixin.qq.com/s/OxadhOKwKV2U5D87Sea_1Q"
-      //   }
-      // ],
       footer: {
         title: "©交大有思",
         url: null

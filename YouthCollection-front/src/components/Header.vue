@@ -33,7 +33,7 @@ export default {
     getHeadArt() {
       this.$http({
         method: "GET",
-        url: this.baseUrl,
+        url: this.baseUrl+'get_head_article',
         headers: {
           // "Access-Control-Allow-Origin": "*",
           // "Access-Control-Allow-Headers": "origin, content-type, accept",

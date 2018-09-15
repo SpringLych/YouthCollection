@@ -7,10 +7,11 @@ from datetime import datetime
 # from django.utils import timezone
 from django.http import JsonResponse
 from django.core import serializers
+from PIL import Image
 import os
 import urllib
 # Create your views here.
-
+save_dir = '../static/images/'
 
 def index(request):
     category = Category.objects.all().order_by('weight')
@@ -36,7 +37,7 @@ def article(request, category):
             "desc": '',
             "url": ''
         }
-        fort["src"] = '../static/images/'+item["img_name"]
+        fort["src"] = save_dir+item["img_name"]
         fort["title"] = item["title"]
         fort["desc"] = item["introduction"]
         fort["url"] = item["address"]
@@ -75,7 +76,7 @@ def add_article(request):
             introduction = request.POST.get('introduction')
             # img_name = filename
             img_url = request.POST.get('image')
-            img_name = save_img(img_url)
+            img_name = save_img(img_url, category, 1)
             article = Article(category=category, address=address, img_name=img_name,
                               title=title, introduction=introduction)
             article.save()
@@ -90,6 +91,8 @@ def get_head_article(request):
     head_art = HeadArticle.objects.filter().values(
         'url', 'img', 'title').order_by('-addtime')
     head_art = list(head_art)
+    for item in head_art:
+        item['img'] = save_dir + item['img']
     # 只获取最新的三个
     return_art = head_art[0:3]
     return JsonResponse(return_art, safe=False)
@@ -103,8 +106,8 @@ def add_head_article(request):
             head_title = request.POST.get('headTitle')
             # 添加的图片链接
             head_img_url = request.POST.get('headImage')
-            head_img_name = save_img(head_img_url)
-            head_img_name = '../static/images/'+head_img_name
+            head_img_name = save_img(head_img_url, 'head', 2)
+            head_img_name = head_img_name
             head_article = HeadArticle(url=head_address,img=head_img_name,title=head_title)
             head_article.save()
             return render(request, 'success.html')
@@ -114,22 +117,31 @@ def add_head_article(request):
         return render(request, 'error.html', {'info': '系统异常,添加失败'})
 
 
-def save_img(img_url):
+def save_img(img_url, catg, index):
     try:
         baseDir = os.path.dirname(os.path.abspath(__file__))
         baseDir = os.path.dirname(baseDir)
         imgdir = os.path.join(baseDir, 'static', 'images/')
         timesnap = datetime.now().strftime('%Y%m%d%H%M%S')
         file_suffix = '.jpg'
-        img_name = '{}{}'.format(timesnap, file_suffix)
+        img_name = '{}{}{}'.format(catg,timesnap, file_suffix)
         img_path = '{}{}'.format(imgdir, img_name)
         num =  1
         while(os.path.exists(img_path)):
             num = num + 1
             timesnap = timesnap + str(num)
-            img_name = '{}{}'.format(timesnap, file_suffix)
+            img_name = '{}{}{}'.format(catg,timesnap, file_suffix)
             img_path = '{}{}'.format(imgdir, img_name)
         urllib.urlretrieve(img_url, filename=img_path)
+        # 压缩图片
+        im = Image.open(img_path)
+        w,h = im.size
+        if index==1:
+            size=(100,100)
+        else:
+            size = (w/2,h/2)
+        im.thumbnail(size)
+        im.save(img_path,'jpeg')
     except IOError as e:
         print e
     except Exception as ee:
